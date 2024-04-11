@@ -1,0 +1,14 @@
+                    Help section for search command
+      Search allows you to search the local exploit and payload database
+
+      [Usage]:
+        search [category] [type]
+
+      [Example]
+        search exploits android
+
+      [Category's]
+        - exploits
+        - payloads
+        - targets
+

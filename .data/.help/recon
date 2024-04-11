@@ -1,0 +1,8 @@
+                    Help section for recon command
+      Starts Osint menu this has its own interface and input handlers
+      with nmap interation. this is used to gain information on a network
+      or target tools planned on being implemented, phoneinfoga, nmap, recon-ng
+      and more
+
+      [Usage]:
+         recon

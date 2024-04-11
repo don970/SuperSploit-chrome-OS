@@ -1,0 +1,16 @@
+OSINT history: From spycraft to IT
+    During the 1980s, the military and intelligence services began to shift some of their information-gathering
+activities away from covert activities like trying to read an adversary’s mail or tapping their phones to
+discover hidden secrets. Instead, effort was put into looking for useful intelligence that was freely
+available or even officially published. The world at the time was changing, and even though social media had
+not yet made the scene, there were plenty of sources like newspapers and publicly available databases that
+contained interesting and sometimes useful information, especially if someone knew how to connect a lot of
+dots. The term OSINT was originally coined to refer to this kind of spycraft. These same techniques can now be
+applied to cybersecurity. Most organizations have vast, public-facing infrastructures that span many networks,
+technologies, hosting services and namespaces. Information can be stored on employee desktops, in legacy on-prem
+servers, with employee-owned devices, in the cloud, embedded inside devices like webcams, or even hidden in the
+source code of active apps and programs. In fact, security and IT staff at large companies almost never knows
+about every asset in their enterprise, public or not. Add in the fact that many organizations also own or
+control several additional assets indirectly, such as their social media accounts, and there is potentially
+a lot of information sitting out there that could be dangerous in the wrong hands.
+#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!

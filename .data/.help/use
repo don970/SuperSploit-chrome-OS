@@ -1,0 +1,13 @@
+                   Help section for use command
+      use allows you to assign a value to the exploit and payload arguments
+
+      [Usage]:
+        use [category] [int]
+
+      [Example]
+        use payload 8
+
+      [Category's]
+        - exploits
+        - payloads
+        - targets

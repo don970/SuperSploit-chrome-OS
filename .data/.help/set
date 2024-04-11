@@ -1,0 +1,11 @@
+                    Help section for set command
+      Set allows you to set a local variable such as L_HOST, L_PORT.
+      These are the values used by the program to run exploits, payloads
+      ect.
+
+      [Usage]:
+        set [variable] [value]
+
+      [Example]
+        set R_HOST 0.0.0.0
+

@@ -1,0 +1,21 @@
+To integrate a exploit simply copy the commit bellow in to your file.
+
+
+# integrated = True
+#!#!#!
+# Exploit description
+#
+# REQUIRED OPTIONS
+# this is gonna be target values and other
+#
+#!#!#!
+
+    Next copy the code bellow and past it this is the path to the database
+
+            installation = f'{os.getenv("HOME")}/.SuperSploit'
+            with open(f"{installation}/.data/data.json", 'r') as file:
+                di = json.load(file)
+                file.close()
+            global di
+
+    Now you can use the dictionary di that contains the details for the attack

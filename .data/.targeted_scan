@@ -1,0 +1,43 @@
+Starting Nmap 7.93 ( https://nmap.org ) at 2024-04-09 12:45 PDT
+Nmap scan report for RAC2V1S (192.168.1.1)
+Host is up (0.0020s latency).
+Not shown: 846 closed tcp ports (conn-refused), 148 filtered tcp ports (no-response)
+PORT      STATE SERVICE     VERSION
+53/tcp    open  domain      dnsmasq 2.55
+| dns-nsid: 
+|   NSID: snloca-rdns-13 (736e6c6f63612d72646e732d3133)
+|   id.server: snloca-rdns-13
+|_  bind.version: dnsmasq-2.55
+80/tcp    open  http        lighttpd
+|_http-server-header: HTTP Server
+139/tcp   open  netbios-ssn Samba smbd 3.X - 4.X (workgroup: HOME)
+443/tcp   open  ssl/http    lighttpd
+|_ssl-date: TLS randomness does not represent time
+|_http-server-header: HTTP Server
+| http-title: Site doesn't have a title (text/html).
+|_Requested resource was /0.2/gui/
+|_http-trane-info: Problem with XML parsing of /evox/about
+| ssl-cert: Subject: commonName=self-signedKey/organizationName=Sagemcom Ca/countryName=FR
+| Not valid before: 2011-10-14T12:32:29
+|_Not valid after:  2111-09-20T12:32:29
+445/tcp   open  netbios-ssn Samba smbd 3.0.24 (workgroup: HOME)
+49152/tcp open  upnp        Portable SDK for UPnP devices 1.6.18 (Linux 4.1.45-5.02L.04; UPnP 1.0)
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel:4.1.45-5.02l.04
+
+Host script results:
+|_clock-skew: mean: 2h29m59s, deviation: 3h32m08s, median: -1s
+|_smb2-time: Protocol negotiation failed (SMB2)
+|_nbstat: NetBIOS name: RAC2V1S, NetBIOS user: <unknown>, NetBIOS MAC: 000000000000 (Xerox)
+| smb-os-discovery: 
+|   OS: Unix (Samba 3.0.24)
+|   NetBIOS computer name: 
+|   Workgroup: HOME\x00
+|_  System time: 2024-04-09T14:46:14-05:00
+| smb-security-mode: 
+|   account_used: guest
+|   authentication_level: share (dangerous)
+|   challenge_response: supported
+|_  message_signing: disabled (dangerous, but default)
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 38.90 seconds

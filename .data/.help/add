@@ -1,0 +1,6 @@
+                   Help section for add command
+        adds a a variable to the local database, and then sets it to a str casting of value
+
+      [Usage]:
+        add [variable_name] [value]
+

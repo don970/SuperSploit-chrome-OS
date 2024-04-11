@@ -1,0 +1,7 @@
+              Help section for wifi attack menu [get-targets] command
+      This starts a ping scan to see who responds and then saves the active ips in a list
+      to be used with the scan-target and show-target command, along with the more advanced
+      scan available
+
+      [Usage]:
+        get-targets

@@ -1,0 +1,17 @@
+# needs to be updated !!
+                    Help section for handler/session
+      a session is a remote connection, the handler uses
+      tcp and ipv4 to establish a non secure connection to
+      the target device.
+
+     Help Section For Handler
+               * start: start handler server
+               * show: shows connected sessions
+               * use: selects a connected session
+                   [Usage]:
+                       use [index of connection in list]
+
+     commands via session
+               * shell - spawns a shell
+               * check - checks if device is alive
+               * run - run an command

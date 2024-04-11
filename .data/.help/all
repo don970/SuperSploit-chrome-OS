@@ -1,0 +1,50 @@
+**************************Help section********************************************************
+     Main Menu:
+
+                all - Shows this page.
+                add - Adds a variable to the database
+                exploit - Runs the exploit
+                menu - starts the recon menu
+                recon - Starts the recon/Osnit menu
+                set - Set a value.
+                show - Shows value or values supplied to it.
+                search - Search for exploits or payloads
+                use - Set the EXPLOIT or PAYLOAD value
+
+************************** Recon Help section ****************************************************
+
+    Main Menu:
+                all - Shows this page.
+                wifi - Starts the wifi osnit menu
+                bt - Start the Bluetooth osnit menu
+                phoneinfoga - starts phoneinfoga wrapper
+                recon-ng - Starts recon-ng v5.1.2, by Tim Tomes (@lanmaster53)
+
+    wifi menu:
+                custom-scan - Starts a custom nmap scan
+                get-targets - Uses nmap to do a ping scan
+                import-targets - Imports saved targets
+                scan-target - Uses nmap -A argument to do a detailed scan
+                save-targets - Makes a persistent target list
+                view-targets - Shows current target list
+
+********************************Recon-NG*****************************************************
+    Commands (type [help|?] <topic>):
+ 
+                back            Exits the current context
+                dashboard       Displays a summary of activity
+                db              Interfaces with the workspace's database
+                exit            Exits the framework
+                help            Displays This menu
+                index           Creates a module index (dev only)
+                keys            Manages third party resource credentials
+                marketplace     Interfaces with the module marketplace
+                modules         Interfaces with installed modules
+                options         Manages the current context options
+                pdb             Starts a Python Debugger session (dev only)
+                script          Records and executes command scripts
+                shell           Executes shell commands
+                show            Shows various framework items
+                snapshots       Manages workspace snapshots
+                spool           Spools output to a file
+                workspaces      Manages workspaces
