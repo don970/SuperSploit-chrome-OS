@@ -14,7 +14,7 @@ try:
         "install_dir": f"{os.getenv('HOME')}/.SuperSploit"
     }
 
-    # Creating a global variable for the installation path also creates a pointer
+    # Creating a variable for the installation path also creates a pointer
     # allowing us to use the cd command while still knowing the full path to the
     # installation dictionary.
 
@@ -22,12 +22,15 @@ try:
     with open(f"{installation}/.data/Aliases.json", "w") as file:
         file.write(json.dumps(a))
         file.close()
-
+        
+    
     commands = """sudo apt-get install python3-prompt-toolkit -y
 sudo apt-get install python3-pyfiglet -y
 sudo apt-get install netcat-traditional adb fastboot pip -y""".split("\n")
 
-    command_one = """pip install --break-system-packages pure-python-adb pwn pybluez
+    command_one = """pip install --break-system-packages pure-python-adb
+pip install --break-system-packages  pwn 
+pip install --break-system-packages pybluez
 bash <( curl -sSL https://raw.githubusercontent.com/sundowndev/phoneinfoga/master/support/scripts/install )
 sudo mv ./phoneinfoga /usr/local/bin/phoneinfoga
 cd $HOME/.SuperSploit/source/core/reconCore/external_tools/ && git clone https://github.com/lanmaster53/recon-ng.git
@@ -50,9 +53,14 @@ bash executable.sh""".split('\n')
     if not term:
         for x in terms:
             print(f"{terms.index(x)}: {x}")
-        data = prompt("Enter the index of the terminal program to attempt to install")
-        STR = f"sudo apt-get install {terms[int(data)]}"
-        subprocess.run(STR.split(" "))
+        try:
+            
+            data = prompt("Enter the index of the terminal program to attempt to install")
+            STR = f"sudo apt-get install {terms[int(data)]}"
+            subprocess.run(STR.split(" "))
+        except ValueError:
+            STR = f"sudo apt-get install tilix"
+            subprocess.run(STR.split(" "))
 
     for x in commands:
         if commands.index(x) < 3:

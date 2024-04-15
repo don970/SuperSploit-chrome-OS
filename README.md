@@ -4,12 +4,15 @@ this is being used against or on.**
 
 **Author: Donald Ford**
 
+***This is the unofficial chrome os port***
+
 SuperSploit is my first attempt at an exploit management system I took inspiration from Metasploit.
 
-Supersploit is a small python program, the program is capable of creating and handling backdoors 
+SuperSploit is a small python program, the program is capable of creating and handling backdoors 
 along with initial exploit connections. 
 
 **KEY POINTS**
+    ***Based on metasploit***\n
     * Lightweight
     * Able to run any platform with python3
     * Fully incorporated shell on linux

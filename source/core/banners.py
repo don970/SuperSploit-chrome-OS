@@ -1,13 +1,14 @@
 import traceback
-
 import pyfiglet
 from .ToStdOut import ToStdout
 import os
 import random
+
 installation = f'{os.getenv("HOME")}/.SuperSploit'
 
+
 class banners:
-    def __init__(self, *args):
+     def __init__(self, *args):
         os.system("clear")
         try:
             with open(f"{installation}/.data/.banners/{random.choice(os.listdir('.data/.banners/'))}") as file:
