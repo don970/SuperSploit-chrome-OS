@@ -17,6 +17,7 @@ from subprocess import Popen, run, PIPE
 from .reconCore.networkRecon import WifiScan
 from .reconCore.Bluetooth import bt
 from .reconCore.external_tools.phoneinfoga import Phone
+from .reconCore.external_tools.bettercap import bettercap
 # redefine input method
 from prompt_toolkit import PromptSession
 from prompt_toolkit.history import FileHistory
@@ -68,8 +69,8 @@ class Recon:
 
         while True:
             try:
-                functions = [recon_ng, Phone, WifiScan, bt, Help.help, Show.show, SetV.SetV, ExploitHandler, use, Search.search, banners, DatabaseManagment.addVariableToDatabase]
-                inputs = ["recon-ng", "phoneinfoga", "wifi", "bt", "help", "show", "set", "exploit", "use", "search", "banner", "add"]
+                functions = [bettercap ,recon_ng, Phone, WifiScan, bt, Help.help, Show.show, SetV.SetV, ExploitHandler, use, Search.search, banners, DatabaseManagment.addVariableToDatabase]
+                inputs = ["bettercap", "recon-ng", "phoneinfoga", "wifi", "bt", "help", "show", "set", "exploit", "use", "search", "banner", "add"]
                 data = input("[Recon menu]: ")
                 if data.split(" ")[0] in inputs:
                     functions[inputs.index(data.split(" ")[0])](data)

@@ -25,6 +25,7 @@ try:
         
     
     commands = """sudo apt-get install python3-prompt-toolkit -y
+sudo apt-get install bettercap
 sudo apt-get install python3-pyfiglet -y
 sudo apt-get install netcat-traditional adb fastboot pip -y""".split("\n")
 

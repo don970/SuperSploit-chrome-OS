@@ -1,3 +1,6 @@
+import sys
+
+
 class ToStdout:
     @staticmethod
     def write(data):
@@ -11,7 +14,13 @@ class ToStdout:
                 pass
         if not data.endswith("\n"):
             data = f"{data}\n"
-        with open("/dev/stdout", "w") as stdout:
-            stdout.write(data)
-            stdout.close()
-        return
+        try:
+            sys.stdout.write(data)
+        except Exception as e:
+            with open("/dev/stdout", "w") as stdout:
+                stdout.write(str(e))
+                stdout.close()
+            with open("/dev/stdout", "w") as stdout:
+                stdout.write(data)
+                stdout.close()
+            return
