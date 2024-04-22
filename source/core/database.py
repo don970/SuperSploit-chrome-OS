@@ -28,6 +28,7 @@ class DatabaseManagment:
                 except Exception:
                     pass
             return shells
+
     @classmethod
     def checkIntegration(cls) -> bool:
         with open(DatabaseManagment.get()["EXPLOIT"]) as file:

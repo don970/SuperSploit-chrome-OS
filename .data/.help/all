@@ -8,7 +8,7 @@
                 recon - Starts the recon/Osnit menu
                 set - Set a value.
                 show - Shows value or values supplied to it.
-                search - Search for exploits or payloads
+                search - Search for exploits, payloads and targets
                 use - Set the EXPLOIT or PAYLOAD value
 
 ************************** Recon Help section ****************************************************
@@ -19,6 +19,7 @@
                 bt - Start the Bluetooth osnit menu
                 phoneinfoga - starts phoneinfoga wrapper
                 recon-ng - Starts recon-ng v5.1.2, by Tim Tomes (@lanmaster53)
+                bettercap - starts bettercap
 
     wifi menu:
                 custom-scan - Starts a custom nmap scan
@@ -48,3 +49,66 @@
                 snapshots       Manages workspace snapshots
                 spool           Spools output to a file
                 workspaces      Manages workspaces
+
+********************************Bettercap*****************************************************
+    help MODULE : List available commands or show module specific help if no module name is provided.
+
+                active : Show information about active modules.
+                quit : Close the session and exit.
+                sleep SECONDS : Sleep for the given amount of seconds.
+                get NAME : Get the value of variable NAME, use * alone for all, or NAME* as a wildcard.
+                set NAME VALUE : Set the VALUE of variable NAME.
+                read VARIABLE PROMPT : Show a PROMPT to ask the user for input that will be saved inside VARIABLE.
+                clear : Clear the screen.
+                include CAPLET : Load and run this caplet in the current session.
+                ! COMMAND : Execute a shell command and print its output.
+                alias MAC NAME : Assign an alias to a given endpoint given its MAC address.
+
+    Modules
+
+                any.proxy > not running
+                api.rest > not running
+                arp.spoof > not running
+                c2 > not running
+                caplets > not running
+                dhcp6.spoof > not running
+                dns.spoof > not running
+                events.stream > running
+                hid > not running
+                http.proxy > not running
+                http.server > not running
+                https.proxy > not running
+                https.server > not running
+                mac.changer > not running
+                mdns.server > not running
+                mysql.server > not running
+                ndp.spoof > not running
+                net.probe > not running
+                net.recon > not running
+                net.sniff > not running
+                packet.proxy > not running
+                syn.scan > not running
+                tcp.proxy > not running
+                ticker > not running
+                ui > not running
+                update > not running
+                wifi > not running
+                wol > not running
+********************************Exploit integration with SuperSploit*****************************************************
+    To integrate a exploit simply copy the commit bellow in to your file.
+                # integrated = True
+                #!#!#!
+                # Exploit description
+                #
+                # REQUIRED OPTIONS
+                # this is gonna be target values and other
+                #
+                #!#!#!
+    Next copy the code bellow and past it this is the path to the database
+
+            installation = f'{os.getenv("HOME")}/.SuperSploit'
+            with open(f"{installation}/.data/data.json", 'r') as file:
+                di = json.load(file)
+                file.close()
+            global di
+    Now you can use the dictionary di that contains the details for the attack

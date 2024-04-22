@@ -1,6 +1,5 @@
 import json
 import os
-import sys
 import traceback
 from prompt_toolkit import PromptSession
 from prompt_toolkit.history import FileHistory
@@ -19,6 +18,7 @@ from .banners import banners
 from .database import DatabaseManagment
 from .recon import Recon
 from .inputfixes import Input_fixes
+from .clean import clean
 
 installation = f'{os.getenv("HOME")}/.SuperSploit'
 history = FileHistory(f'{installation}/.data/.history/history')
@@ -73,9 +73,9 @@ class Input:
                 return
             if data.endswith(" "):
                 data = data.lstrip(" ")
-            functions = [Show.shells, Recon, Help.help, Show.show, SetV.SetV, ExploitHandler, use, Search.search,
+            functions = [clean, Show.shells, Recon, Help.help, Show.show, SetV.SetV, ExploitHandler, use, Search.search,
                          banners, DatabaseManagment.addVariableToDatabase]
-            inputs = ["shells", "recon", "help", "show", "set", "exploit", "use", "search", "banner", "add"]
+            inputs = ["clean", "shells", "recon", "help", "show", "set", "exploit", "use", "search", "banner", "add"]
             try:
                 if data.split(" ")[0] in inputs:
                     functions[inputs.index(data.split(" ")[0])](data)

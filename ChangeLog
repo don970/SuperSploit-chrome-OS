@@ -3,4 +3,4 @@ Changes in version 1.0.6
     * Added recon-ng support
     * Added more exploits
     * started chrome-os support
-    *
+    * Added bettercap and wireshark

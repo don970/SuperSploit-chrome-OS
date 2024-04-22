@@ -79,34 +79,15 @@ def get_network_info():
 
 
 class help:
+    def __init__(self, master):
+        self.a = master.split(' ')
     @classmethod
     def help(cls):
         data = PromptSession(history=history, auto_suggest=AutoSuggestFromHistory(), enable_history_search=True)
-        while True:
-            print('all - shows basic help page')
-            a = data.prompt("[WiFi Attack Menu Help]: ")
-            for x in closing_statements:
-                if x in a:
-                    return "[*] Exiting"
-            if a in os.listdir(".data/.help"):
-                with open(f".data/.help/{a}", "r") as file:
-                    print("\033[H\033[J")
-                    print(file.read())
-                    file.close()
-                continue
-            try:
-                if "clear" in a:
-                    print("\033[H\033[J")
-                else:
-                    cmd = Popen(a.split(" "), stdout=PIPE, stdin=PIPE, stderr=PIPE)
-                    output = cmd.communicate()[0], cmd.communicate()[1]
-                    for x in output:
-                        if len(x) > 0:
-                            print(x.decode())
-                    continue
-            except Exception:
-                print(traceback.format_exc())
-                return
+        with open(f".data/.help/all", "r") as file:
+            print("\033[H\033[J")
+            print(file.read())
+            file.close()
 
 
 class WifiScan:
@@ -119,9 +100,9 @@ class WifiScan:
     def GetData(self, ip_subnet_and_host):
         n = nmap(ip_subnet_and_host)
         while True:
-            funcs = [n.scan_whole_network, n.targetedScan, help.help, n.show_target_list, n.Import]
-            inputs = ["get-targets", "scan-target", "help", "view-targets", "import-targets"]
-            data = input("[WiFi Menu]: ")
+            funcs = [n.scan_whole_network, n.targetedScan, help.help, n.show_target_list, n.Import, n.customScan]
+            inputs = ["get-targets", "scan-target", "help", "view-targets", "import-targets", "custom-scan"]
+            data = input(f"{os.getcwd()}:[WiFi Menu]: ")
             for x in closing_statements:
                 if x in data:
                     return "Exiting"

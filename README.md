@@ -1,6 +1,7 @@
-**Please use at your own risk, this program is fully capable of breaking the law depending on 
+***Disclaimer***
+***Please use at your own risk, this program is fully capable of breaking the law depending on 
 how the program is used. Make sure you have permission from the owner of the device or network 
-this is being used against or on.**
+this is being used against or on.***
 
 **Author: Donald Ford**
 
@@ -12,7 +13,8 @@ SuperSploit is a small python program, the program is capable of creating and ha
 along with initial exploit connections. 
 
 **KEY POINTS**
-    ***Based on metasploit***\n
+    ***Based on metasploit***
+    * Heavily tailored to chrome-os dev env
     * Lightweight
     * Able to run any platform with python3
     * Fully incorporated shell on linux

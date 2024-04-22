@@ -1,4 +1,5 @@
 import os
+import sys
 
 from .ToStdOut import ToStdout
 write = ToStdout.write
@@ -7,7 +8,8 @@ installation = f'{os.getenv("HOME")}/.SuperSploit'
 
 class Error:
     def __init__(self, data):
-        """Error Handling Method prints to stdout and writes to 'installation_dictionary/.data/.errors/error.log'"""
+        """Error Handling Method tries to write to stdout if fails uses sys.stderr and writes to 'installation_dictionary/.data/.errors/error.log'.
+        The reason for this is to just display the error and not have it interfere with the program."""
         try:
             if "str" not in str(type(data)):
                 try:
@@ -24,4 +26,5 @@ class Error:
             write(data)
             return
         except Exception as e:
-            write(e)
+            sys.stderr.write(str(e))
+            raise OSError
