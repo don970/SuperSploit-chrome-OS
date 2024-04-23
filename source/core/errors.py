@@ -26,5 +26,6 @@ class Error:
             write(data)
             return
         except Exception as e:
+            """here we raise OsError because the only real possible error is a io or file not found"""
             sys.stderr.write(str(e))
             raise OSError
