@@ -2,6 +2,7 @@ import json
 import os
 import pty
 import socket
+import sys
 import traceback
 from subprocess import run, Popen, PIPE
 from prompt_toolkit import PromptSession
@@ -9,29 +10,25 @@ from prompt_toolkit.history import FileHistory
 from prompt_toolkit.auto_suggest import AutoSuggestFromHistory
 from .netToolAttacks import nmap
 
-history = FileHistory('.data/.history/history')
+installation = f'{os.getenv("HOME")}/.SuperSploit'
+history = FileHistory(f'{installation}/.data/.history/history')
 input = PromptSession(history=history, auto_suggest=AutoSuggestFromHistory(), enable_history_search=True)
 input = input.prompt
-
 closing_statements = ["exit", 'close', 'back']
 
 
 def sys_call_Linux(data):
     dataList = data.split(' ')
-    with open(".data/Aliases.json") as file:
+    with open(f"{installation}/.data/Aliases.json") as file:
         Aliases = json.load(file)
         file.close()
     for k, v in Aliases.items():
-        if k in dataList:
-            dataList[dataList.index(k)] = v
+        if k in data.split(" "):
+            dataList = data.split(' ')[0:len(data.split(" ")) - 1]
+            dataList.append(v)
     if "cd" in dataList:
-        print("[*] The cd command will spawn a shell in the folder you change to. This is\n"
-                       "because the program release on the working dir to be the programs install\n"
-                       "folder. I will update in future to be able to just use cd.")
-        cwd = os.getcwd()
         os.chdir(dataList[1])
-        pty.spawn(f"{os.getenv('SHELL')}")
-        os.chdir(cwd)
+        return
     if "cat" in dataList:
         with open(dataList[1], 'r') as file:
             print(file.read())
@@ -62,9 +59,7 @@ def print(data):
             pass
     if not data.endswith("\n"):
         data = f"{data}\n"
-    with open("/dev/stdout", "w") as stdout:
-        stdout.write(data)
-        stdout.close()
+    sys.stdout.write(data)
     return
 
 
@@ -83,8 +78,8 @@ class help:
         self.a = master.split(' ')
     @classmethod
     def help(cls):
-        data = PromptSession(history=history, auto_suggest=AutoSuggestFromHistory(), enable_history_search=True)
-        with open(f".data/.help/all", "r") as file:
+
+        with open(f"{installation}/.data/.help/all", "r") as file:
             print("\033[H\033[J")
             print(file.read())
             file.close()
@@ -102,7 +97,7 @@ class WifiScan:
         while True:
             funcs = [n.scan_whole_network, n.targetedScan, help.help, n.show_target_list, n.Import, n.customScan]
             inputs = ["get-targets", "scan-target", "help", "view-targets", "import-targets", "custom-scan"]
-            data = input(f"{os.getcwd()}:[WiFi Menu]: ")
+            data = input(f"[WiFi Menu]: ")
             for x in closing_statements:
                 if x in data:
                     return "Exiting"

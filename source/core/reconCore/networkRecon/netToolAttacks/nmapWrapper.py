@@ -1,5 +1,6 @@
 # This is a wrapper for nmap
 import os
+import sys
 from subprocess import run
 # redefine input method
 from prompt_toolkit import PromptSession
@@ -8,6 +9,7 @@ from prompt_toolkit.auto_suggest import AutoSuggestFromHistory
 history = FileHistory('.data/.history/history')
 input = PromptSession(history=history, auto_suggest=AutoSuggestFromHistory(), enable_history_search=True)
 input = input.prompt
+installation = f'{os.getenv("HOME")}/.SuperSploit'
 
 # replace the print method
 def print(data):
@@ -15,9 +17,8 @@ def print(data):
         data = f"{str(data)}"
     if not data.endswith("\n"):
         data = f"{data}\n"
-    with open("/dev/stdout", "w") as stdout:
-        stdout.write(data)
-        stdout.close()
+
+    sys.stdout.write(data)
     return
 
 
@@ -32,7 +33,7 @@ class nmap:
         return
 
     def Import(self):
-        with open(".data/.targets") as file:
+        with open(f"{installation}/.data/.targets") as file:
             print("[*] Repopulating targets list via target file. ")
             for x in file.read().split("\n"):
                 self.targetlist.append(x)
@@ -62,7 +63,7 @@ class nmap:
                 # split output and take the 4 index of the output and add to a list
                 li.append(x.split(" ")[4])
         print("[*] Populating targets file.")
-        with open(".data/.targets", "w") as file:
+        with open(f"{installation}/.data/.targets", "w") as file:
             for x in li:
                 if li.index(x) < len(li) - 1:
                     file.write(f"{x}\n")
@@ -87,7 +88,7 @@ class nmap:
         print("[*] Scanning... ")
         output = run(["nmap", "-A", self.targetlist[data]], capture_output=True)
         print("[*] Populating targeted scan file")
-        with open(".data/.targeted_scan", "w") as file:
+        with open(f"{installation}/.data/.targeted_scan", "w") as file:
             file.write(output.stdout.decode())
             file.close()
         return "[*] Full scan logged to .data/.targeted_scan"
@@ -107,7 +108,7 @@ class nmap:
         print("[*] Scanning... ")
         output = run(["nmap", data1, self.targetlist[data]], capture_output=True)
         print("[*] Populating custom scan file")
-        with open(".data/.custom_scan", "w") as file:
+        with open(f"{installation}/.data/.custom_scan", "w") as file:
             file.write(output.stdout.decode())
             file.close()
         return "[*] Full scan logged to .data/.custom_scan"

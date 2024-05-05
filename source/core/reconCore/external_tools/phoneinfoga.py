@@ -23,7 +23,7 @@ class Phone:
         with open(f"{installation}/.data/.phone_numbers", "r") as file:
             if phone_number not in file.read():
                 file.close()
-                with open("{installation}/.data/.phone_numbers", "a") as file1:
+                with open(f"{installation}/.data/.phone_numbers", "a") as file1:
                     file1.write(phone_number)
                     file1.close()
         print(f"Scanning phone number: [{phone_number}].")
@@ -31,4 +31,4 @@ class Phone:
         with open("/tmp/phoneinfoga.scan", "w") as file:
             file.write(data.stdout.decode())
             file.close()
-        print(f"scan logged to /tmp/phoneinfoga.scan\n{data.stdout.decode()}")
+        print(f"{data.stdout.decode()}\nscan logged to /tmp/phoneinfoga.scan")

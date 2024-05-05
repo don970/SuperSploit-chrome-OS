@@ -35,19 +35,21 @@ def recon_ng(data):
 
 def sys_call_Linux(data):
     shells = DatabaseManagment.findShells()
-    if data in shells:
-        subprocess.run([f"/usr/bin/{data}"])
-    dataList = data.split(' ')
+    dataList = data.split(" ")
     with open(f"{installation}/.data/Aliases.json") as file:
         Aliases = json.load(file)
         file.close()
     for k, v in Aliases.items():
-        if k in dataList:
-            dataList[dataList.index(k)] = v
+        if k in data.split(" "):
+            dataList = data.split(' ')[0:len(data.split(" ")) - 1]
+            dataList.append(v)
+    if data in shells:
+        subprocess.run([f"/usr/bin/{data}"])
+    inputFixList = ["cd", "clear", "exit"]
     try:
-        if "cd" in dataList:
-            Input_fixes.cd(dataList)
-            return True
+        if dataList[0] in inputFixList:
+            Input_fixes(dataList)
+            return
         subprocess.run(dataList)
         return True
     except Exception:
@@ -67,7 +69,6 @@ class Recon:
 
     def __init__(self, args):
         self.database = DatabaseManagment.get()
-
         while True:
             try:
                 functions = [wireshark, bettercap, recon_ng, Phone, WifiScan, bt, Help.help, Show.show, SetV.SetV, ExploitHandler, use, Search.search, banners, DatabaseManagment.addVariableToDatabase]

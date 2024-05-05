@@ -4,6 +4,4 @@ Changes in version 1.0.6
     * Added more exploits
     * started chrome-os support
     * Added bettercap
-
-Added varius new exploits and system stability enhancements, started individual support for chrome-os
-dev environment,
+    * Minor bug fixes

@@ -22,6 +22,9 @@ from .clean import clean
 
 installation = f'{os.getenv("HOME")}/.SuperSploit'
 history = FileHistory(f'{installation}/.data/.history/history')
+with open(".data/Aliases.json") as file:
+    aliases = json.load(file)
+    file.close()
 
 env = os.environ
 
@@ -50,7 +53,7 @@ class Input:
     def sys_call_other(cls, data):
         try:
             cmd = subprocess.Popen(data.split(" "), stdout=PIPE, stdin=PIPE, stderr=PIPE)
-            output = cmd.communicate()[0], cmd.communicate()[1]
+            output = cmd.communicate()[0], cmd.communicate()[2]
             for x in output:
                 if len(x) > 0:
                     ToStdout.write(x.decode())
@@ -65,9 +68,13 @@ class Input:
 
     @classmethod
     def check(cls, data):
+        dataList = data.split(" ")
+        for k, v in aliases.items():
+            if k in data.split(" "):
+                dataList = data.split(' ')[0:len(data.split(" ")) -1]
+                dataList.append(v)
         inputFixList = ["cd", "clear", "exit"]
         try:
-            dataList = data.split(" ")
             if dataList[0] in inputFixList:
                 Input_fixes(dataList)
                 return
@@ -95,7 +102,7 @@ class Input:
         while True:
             try:
                 data = PromptSession(history=history, auto_suggest=AutoSuggestFromHistory(), enable_history_search=True)
-                inp = data.prompt(f"{os.getcwd()}:[SuperSploit]: ")
+                inp = data.prompt(f"[SuperSploit]: ")
                 cls().check(inp)
             except Exception:
                 Error(traceback.format_exc())

@@ -1,1 +1,161 @@
- 
+Starting Nmap 7.93 ( https://nmap.org ) at 2024-05-05 15:32 PDT
+Nmap scan report for 192.168.1.18
+Host is up (0.031s latency).
+Not shown: 994 closed tcp ports (conn-refused)
+PORT      STATE SERVICE    VERSION
+53/tcp    open  domain     Cloudflare public DNS
+1100/tcp  open  upnp
+| fingerprint-strings: 
+|   FourOhFourRequest: 
+|     HTTP/1.1 404 Not Found
+|     Date: Sun, 05 May 2024 22:33:12 GMT
+|     Content-Length: 132
+|     Content-Type: text/html
+|     Connection: close
+|     Server: 
+|     <html><head><title>404 Not Found</title></head><body><h1>Not Found</h1><p>The requested URL was not found on this server.</p></html>
+|   GetRequest: 
+|     HTTP/1.1 200 OK
+|     Date: Sun, 05 May 2024 22:32:55 GMT
+|     Content-Length: 1308
+|     Content-Type: text/xml; charset="utf-8"
+|     Connection: close
+|     Server: 
+|     <?xml version="1.0" encoding="UTF-8"?>
+|     <root xmlns="urn:schemas-upnp-org:device-1-0" xmlns:dlna="urn:schemas-dlna-org:device-1-0">
+|     <specVersion>
+|     <major>1</major>
+|     <minor>0</minor>
+|     </specVersion>
+|     <device>
+|     <deviceType>urn:lge-com:device:room-connect:1</deviceType>
+|     <friendlyName>[LG] webOS TV UQ8000AUB</friendlyName>
+|     <manufacturer>LG Electronics</manufacturer>
+|     <manufacturerURL>http://www.lge.com</manufacturerURL>
+|     <modelDescription>4c5d3f50-0eec-c6ef-84b1-dba31f5283a8</modelDescription>
+|     <modelName>LG smart TV</modelName>
+|     <modelURL>http://www.lge.com</modelURL>
+|     <modelNumber>7.3.1</modelNumber>
+|     <serialNumber></serialNumber>
+|     <UDN>uuid:20dc8a59-bff1-4e8b-9db4-64c3ba39bc79</UDN>
+|   HTTPOptions: 
+|     HTTP/1.1 405 Bad Request
+|     Date: Sun, 05 May 2024 22:32:56 GMT
+|     Content-Length: 0
+|     Connection: close
+|     Server:
+|   RTSPRequest: 
+|     HTTP/1.1 405 Bad Request
+|     Date: Sun, 05 May 2024 22:32:56 GMT
+|     Content-Length: 0
+|     Server:
+|   SIPOptions: 
+|     HTTP/1.1 404 Not Found
+|     Content-Length: 132
+|     Content-Type: text/html
+|     Server: 
+|_    <html><head><title>404 Not Found</title></head><body><h1>Not Found</h1><p>The requested URL was not found on this server.</p></html>
+3000/tcp  open  tcpwrapped
+3001/tcp  open  ssl/http   LG smart TV http service
+|_http-title: Site doesn't have a title.
+|_ssl-date: TLS randomness does not represent time
+| ssl-cert: Subject: commonName=LGE TV SSG/organizationName=LG Electronics Inc./stateOrProvinceName=Seoul/countryName=KR
+| Not valid before: 2018-03-12T01:49:52
+|_Not valid after:  2034-08-15T01:49:52
+| tls-alpn: 
+|_  http/1.1
+7000/tcp  open  rtsp       AirTunes rtspd 377.30.02
+|_irc-info: Unable to open connection
+|_rtsp-methods: ERROR: Script execution failed (use -d to debug)
+49152/tcp open  upnp
+| fingerprint-strings: 
+|   DNSVersionBindReqTCP, RPCCheck, RTSPRequest, SIPOptions: 
+|     HTTP/0.0 400 Bad Request
+|     SERVER: Linux/5.4.96-934.11.mebbin.1, UPnP/1.0, LGE WebOS TV LGE_DLNA_SDK/1.6.0/00.00.00 DLNADOC/1.50
+|     CONTENT-LENGTH: 50
+|     CONTENT-TYPE: text/html
+|     <html><body><h1>400 Bad Request</h1></body></html>
+|   FourOhFourRequest, GetRequest: 
+|     HTTP/1.0 500 Internal Server Error
+|     SERVER: Linux/5.4.96-934.11.mebbin.1, UPnP/1.0, LGE WebOS TV LGE_DLNA_SDK/1.6.0/00.00.00 DLNADOC/1.50
+|     CONTENT-LENGTH: 60
+|     CONTENT-TYPE: text/html
+|     <html><body><h1>500 Internal Server Error</h1></body></html>
+|   HTTPOptions: 
+|     HTTP/0.0 501 Not Implemented
+|     SERVER: Linux/5.4.96-934.11.mebbin.1, UPnP/1.0, LGE WebOS TV LGE_DLNA_SDK/1.6.0/00.00.00 DLNADOC/1.50
+|     CONTENT-LENGTH: 54
+|     CONTENT-TYPE: text/html
+|_    <html><body><h1>501 Not Implemented</h1></body></html>
+2 services unrecognized despite returning data. If you know the service/version, please submit the following fingerprints at https://nmap.org/cgi-bin/submit.cgi?new-service :
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port1100-TCP:V=7.93%I=7%D=5/5%Time=66380917%P=x86_64-pc-linux-gnu%r(Get
+SF:Request,5B0,"HTTP/1\.1\x20200\x20OK\r\nDate:\x20Sun,\x2005\x20May\x2020
+SF:24\x2022:32:55\x20GMT\r\nContent-Length:\x201308\r\nContent-Type:\x20te
+SF:xt/xml;\x20charset=\"utf-8\"\r\nConnection:\x20close\r\nServer:\x20\r\n
+SF:\r\n<\?xml\x20version=\"1\.0\"\x20encoding=\"UTF-8\"\?>\r\n<root\x20xml
+SF:ns=\"urn:schemas-upnp-org:device-1-0\"\x20xmlns:dlna=\"urn:schemas-dlna
+SF:-org:device-1-0\">\r\n\x20\x20<specVersion>\r\n\x20\x20\x20\x20<major>1
+SF:</major>\r\n\x20\x20\x20\x20<minor>0</minor>\r\n\x20\x20</specVersion>\
+SF:r\n\x20\x20<device>\r\n\x20\x20\x20\x20<deviceType>urn:lge-com:device:r
+SF:oom-connect:1</deviceType>\r\n\x20\x20\x20\x20<friendlyName>\[LG\]\x20w
+SF:ebOS\x20TV\x20UQ8000AUB</friendlyName>\r\n\x20\x20\x20\x20<manufacturer
+SF:>LG\x20Electronics</manufacturer>\r\n\x20\x20\x20\x20<manufacturerURL>h
+SF:ttp://www\.lge\.com</manufacturerURL>\r\n\x20\x20\x20\x20<modelDescript
+SF:ion>4c5d3f50-0eec-c6ef-84b1-dba31f5283a8</modelDescription>\r\n\x20\x20
+SF:\x20\x20<modelName>LG\x20smart\x20TV</modelName>\r\n\x20\x20\x20\x20<mo
+SF:delURL>http://www\.lge\.com</modelURL>\r\n\x20\x20\x20\x20<modelNumber>
+SF:7\.3\.1</modelNumber>\r\n\x20\x20\x20\x20<serialNumber></serialNumber>\
+SF:r\n\x20\x20\x20\x20<UDN>uuid:20dc8a59-bff1-4e8b-9db4-64c3ba39bc79</UDN>
+SF:\r\n\x20\x20\x20")%r(HTTPOptions,71,"HTTP/1\.1\x20405\x20Bad\x20Request
+SF:\r\nDate:\x20Sun,\x2005\x20May\x202024\x2022:32:56\x20GMT\r\nContent-Le
+SF:ngth:\x200\r\nConnection:\x20close\r\nServer:\x20\r\n\r\n")%r(RTSPReque
+SF:st,5E,"HTTP/1\.1\x20405\x20Bad\x20Request\r\nDate:\x20Sun,\x2005\x20May
+SF:\x202024\x2022:32:56\x20GMT\r\nContent-Length:\x200\r\nServer:\x20\r\n\
+SF:r\n")%r(FourOhFourRequest,10E,"HTTP/1\.1\x20404\x20Not\x20Found\r\nDate
+SF::\x20Sun,\x2005\x20May\x202024\x2022:33:12\x20GMT\r\nContent-Length:\x2
+SF:0132\r\nContent-Type:\x20text/html\r\nConnection:\x20close\r\nServer:\x
+SF:20\r\n\r\n<html><head><title>404\x20Not\x20Found</title></head><body><h
+SF:1>Not\x20Found</h1><p>The\x20requested\x20URL\x20was\x20not\x20found\x2
+SF:0on\x20this\x20server\.</p></html>")%r(SIPOptions,D6,"HTTP/1\.1\x20404\
+SF:x20Not\x20Found\r\nContent-Length:\x20132\r\nContent-Type:\x20text/html
+SF:\r\nServer:\x20\r\n\r\n<html><head><title>404\x20Not\x20Found</title></
+SF:head><body><h1>Not\x20Found</h1><p>The\x20requested\x20URL\x20was\x20no
+SF:t\x20found\x20on\x20this\x20server\.</p></html>");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port49152-TCP:V=7.93%I=7%D=5/5%Time=66380906%P=x86_64-pc-linux-gnu%r(Fo
+SF:urOhFourRequest,F6,"HTTP/1\.0\x20500\x20Internal\x20Server\x20Error\r\n
+SF:SERVER:\x20Linux/5\.4\.96-934\.11\.mebbin\.1,\x20UPnP/1\.0,\x20LGE\x20W
+SF:ebOS\x20TV\x20LGE_DLNA_SDK/1\.6\.0/00\.00\.00\x20DLNADOC/1\.50\r\nCONTE
+SF:NT-LENGTH:\x2060\r\nCONTENT-TYPE:\x20text/html\r\n\r\n<html><body><h1>5
+SF:00\x20Internal\x20Server\x20Error</h1></body></html>")%r(GetRequest,F6,
+SF:"HTTP/1\.0\x20500\x20Internal\x20Server\x20Error\r\nSERVER:\x20Linux/5\
+SF:.4\.96-934\.11\.mebbin\.1,\x20UPnP/1\.0,\x20LGE\x20WebOS\x20TV\x20LGE_D
+SF:LNA_SDK/1\.6\.0/00\.00\.00\x20DLNADOC/1\.50\r\nCONTENT-LENGTH:\x2060\r\
+SF:nCONTENT-TYPE:\x20text/html\r\n\r\n<html><body><h1>500\x20Internal\x20S
+SF:erver\x20Error</h1></body></html>")%r(HTTPOptions,EA,"HTTP/0\.0\x20501\
+SF:x20Not\x20Implemented\r\nSERVER:\x20Linux/5\.4\.96-934\.11\.mebbin\.1,\
+SF:x20UPnP/1\.0,\x20LGE\x20WebOS\x20TV\x20LGE_DLNA_SDK/1\.6\.0/00\.00\.00\
+SF:x20DLNADOC/1\.50\r\nCONTENT-LENGTH:\x2054\r\nCONTENT-TYPE:\x20text/html
+SF:\r\n\r\n<html><body><h1>501\x20Not\x20Implemented</h1></body></html>")%
+SF:r(RTSPRequest,E2,"HTTP/0\.0\x20400\x20Bad\x20Request\r\nSERVER:\x20Linu
+SF:x/5\.4\.96-934\.11\.mebbin\.1,\x20UPnP/1\.0,\x20LGE\x20WebOS\x20TV\x20L
+SF:GE_DLNA_SDK/1\.6\.0/00\.00\.00\x20DLNADOC/1\.50\r\nCONTENT-LENGTH:\x205
+SF:0\r\nCONTENT-TYPE:\x20text/html\r\n\r\n<html><body><h1>400\x20Bad\x20Re
+SF:quest</h1></body></html>")%r(RPCCheck,E2,"HTTP/0\.0\x20400\x20Bad\x20Re
+SF:quest\r\nSERVER:\x20Linux/5\.4\.96-934\.11\.mebbin\.1,\x20UPnP/1\.0,\x2
+SF:0LGE\x20WebOS\x20TV\x20LGE_DLNA_SDK/1\.6\.0/00\.00\.00\x20DLNADOC/1\.50
+SF:\r\nCONTENT-LENGTH:\x2050\r\nCONTENT-TYPE:\x20text/html\r\n\r\n<html><b
+SF:ody><h1>400\x20Bad\x20Request</h1></body></html>")%r(DNSVersionBindReqT
+SF:CP,E2,"HTTP/0\.0\x20400\x20Bad\x20Request\r\nSERVER:\x20Linux/5\.4\.96-
+SF:934\.11\.mebbin\.1,\x20UPnP/1\.0,\x20LGE\x20WebOS\x20TV\x20LGE_DLNA_SDK
+SF:/1\.6\.0/00\.00\.00\x20DLNADOC/1\.50\r\nCONTENT-LENGTH:\x2050\r\nCONTEN
+SF:T-TYPE:\x20text/html\r\n\r\n<html><body><h1>400\x20Bad\x20Request</h1><
+SF:/body></html>")%r(SIPOptions,E2,"HTTP/0\.0\x20400\x20Bad\x20Request\r\n
+SF:SERVER:\x20Linux/5\.4\.96-934\.11\.mebbin\.1,\x20UPnP/1\.0,\x20LGE\x20W
+SF:ebOS\x20TV\x20LGE_DLNA_SDK/1\.6\.0/00\.00\.00\x20DLNADOC/1\.50\r\nCONTE
+SF:NT-LENGTH:\x2050\r\nCONTENT-TYPE:\x20text/html\r\n\r\n<html><body><h1>4
+SF:00\x20Bad\x20Request</h1></body></html>");
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 76.07 seconds
