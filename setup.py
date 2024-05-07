@@ -4,6 +4,7 @@ import os
 import subprocess
 import traceback
 
+import requests
 from prompt_toolkit import prompt
 
 try:
@@ -30,18 +31,32 @@ sudo apt-get install python3-pyfiglet -y
 sudo apt-get install netcat-traditional adb fastboot pip -y""".split("\n")
 
     command_one = """pip install --break-system-packages pure-python-adb
-pip install --break-system-packages  pwn 
-pip install --break-system-packages pybluez
-bash <( curl -sSL https://raw.githubusercontent.com/sundowndev/phoneinfoga/master/support/scripts/install )
-sudo mv ./phoneinfoga /usr/local/bin/phoneinfoga
-cd $HOME/.SuperSploit/source/core/reconCore/external_tools/ && git clone https://github.com/lanmaster53/recon-ng.git
-cd recon-ng && pip install --break-system-packages -r REQUIREMENTS
-cd $CWD
+pip install --break-system-packages  pwn
+pip install --break-system-packages requests
 bash executable.sh""".split('\n')
+
+    # we want this later for easy fixing
+    ccc = """cd $HOME/.SuperSploit/source/core/reconCore/external_tools/ && git clone https://github.com/lanmaster53/recon-ng.git
+cd recon-ng && pip install --break-system-packages -r REQUIREMENTS
+
+/home/donald/.SuperSploit
+
+sudo mv ./phoneinfoga /usr/local/bin/phoneinfoga
+cd $CWD
+"""
 
     with open(".data/.terminals") as file:
         terms = file.read().split("\n")
         file.close()
+
+    print("installing phoneinfoga")
+    req = requests.get("https://raw.githubusercontent.com/sundowndev/phoneinfoga/master/support/scripts/install")
+    with open("install", "w") as file:
+        file.write(req.content.decode())
+        file.close()
+    subprocess.run(["bash", "install"])
+    subprocess.run(["sudo", "mv", "phoneinfoga", "/usr/local/bin/phoneinfoga"])
+
     programs = os.listdir("/bin")
     term = False
     prompt("[*] The following will attempt to install a terminal program if none are present in bin folder defaults to "
@@ -67,10 +82,6 @@ bash executable.sh""".split('\n')
         if commands.index(x) < 3:
             subprocess.run(x.split(" "))
 
-    for x in command_one:
-        subprocess.run(x.split(" "))
-
 except Exception as e:
     print(traceback.format_exc())
-    print(f"[!] Error: [{e}]. Happened during setup script execution. program was not installed properly. Please "
-              f"Rerun ./setup.py from install location")
+    print(f"[!] Error: [{e}]. Happened during setup script execution. program was not installed properly.\nPlease Rerun ./setup.py from install location")
