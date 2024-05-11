@@ -1,16 +1,38 @@
-OSINT history: From spycraft to IT
-    During the 1980s, the military and intelligence services began to shift some of their information-gathering
-activities away from covert activities like trying to read an adversary’s mail or tapping their phones to
-discover hidden secrets. Instead, effort was put into looking for useful intelligence that was freely
-available or even officially published. The world at the time was changing, and even though social media had
-not yet made the scene, there were plenty of sources like newspapers and publicly available databases that
-contained interesting and sometimes useful information, especially if someone knew how to connect a lot of
-dots. The term OSINT was originally coined to refer to this kind of spycraft. These same techniques can now be
-applied to cybersecurity. Most organizations have vast, public-facing infrastructures that span many networks,
-technologies, hosting services and namespaces. Information can be stored on employee desktops, in legacy on-prem
-servers, with employee-owned devices, in the cloud, embedded inside devices like webcams, or even hidden in the
-source code of active apps and programs. In fact, security and IT staff at large companies almost never knows
-about every asset in their enterprise, public or not. Add in the fact that many organizations also own or
-control several additional assets indirectly, such as their social media accounts, and there is potentially
-a lot of information sitting out there that could be dangerous in the wrong hands.
+“A data breach is about both privacy and security. And security becomes very, very important because you can’t have privacy unless you have good security. And if someone tries to say otherwise, they are crazy people!” –Dr. Larry Ponemon at SecureWorld Detroit
+#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!
+“If you spend more on coffee than on IT security, you will be hacked.”–Richard Clarke
+#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!
+“Someone cracked my password. Now I need to rename my puppy.” –Unknown
+#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!
+“Will my smart fridge tell my mother about my chocolate cake addiction?”–Unknown
+#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!
+“For me personally, cloud security isn’t a worry. My data is such a mess that no one would find anything anyway.”–Anonymous
+#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!
+“In the underworld, reality itself has elastic properties and is capable of being stretched into different definitions of the truth.” —Roderick Vincent
+#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!
+“Toughen up cupcake, the Prince of Nigeria is sad too; no one falls for his emails anymore.” –Anonymous
+#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!
+“In the digital era, privacy must be a priority. Is it just me, or is secret blanket surveillance obscenely outrageous?” —Al Gore
+#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!
+“I’ve come to the conclusion that if you give a data point to a company, they will eventually sell it, leak it, lose it or get hacked and relieved of it. There really don’t seem to be any exceptions….” —Brian Krebs
+#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!
+“What happens in Vegas ends up on YouTube.” —Tim Lebrecht
+#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!
+“Whoever said that the definition of insanity is doing the same thing over and over again and expecting different results has obviously never had to reboot a computer.”–William Petersen
+#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!
+“Why are iPhone chargers not called Apple Juice?!”–Unknown
+#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!
+“Don’t worry, I’m from the IT team.” –Unknown
+#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!
+“Technology is like a fish. The longer it stays on the shelf, the less desirable it becomes.”–Andrew Heller
+#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!
+“You’re not online anymore…Did you suddenly get a life?” –Techie’s friend
+#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!
+“If computers get too powerful, we can organize them into committees. That’ll do them in.” –Unknown
+#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!
+“Never trust a computer you can’t throw out a window.” —Steve Wozniak
+#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!
+“Computers are useless. They can only give you answers.” —Pablo Picasso
+#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!
+“If you think that patience is a virtue, try running a business without high-speed internet.”–Unknown
 #!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!#!

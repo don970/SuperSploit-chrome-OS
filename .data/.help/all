@@ -28,6 +28,7 @@ commands:
                 phoneinfoga - starts phoneinfoga wrapper
                 recon-ng - Starts recon-ng v5.1.2, by Tim Tomes (@lanmaster53)
                 bettercap - starts bettercap
+                name-search - gives a list of google dorks with that name
 
     wifi menu:
                 custom-scan - Starts a custom nmap scan

@@ -16,6 +16,7 @@ from .database import DatabaseManagment
 from subprocess import Popen, run, PIPE
 from .reconCore.networkRecon import WifiScan
 from .reconCore.Bluetooth import bt
+from .reconCore.external_tools.namesearch import NameSearch
 from .reconCore.external_tools.phoneinfoga import Phone
 from .reconCore.external_tools.bettercap import bettercap
 from .reconCore.external_tools.wireshark import wireshark
@@ -71,8 +72,8 @@ class Recon:
         self.database = DatabaseManagment.get()
         while True:
             try:
-                functions = [wireshark, bettercap, recon_ng, Phone, WifiScan, bt, Help.help, Show.show, SetV.SetV, ExploitHandler, use, Search.search, banners, DatabaseManagment.addVariableToDatabase]
-                inputs = ["wireshark", "bettercap", "recon-ng", "phoneinfoga", "wifi", "bt", "help", "show", "set", "exploit", "use", "search", "banner", "add"]
+                functions = [NameSearch.main, wireshark, bettercap, recon_ng, Phone, WifiScan, bt, Help.help, Show.show, SetV.SetV, ExploitHandler, use, Search.search, banners, DatabaseManagment.addVariableToDatabase]
+                inputs = ["name-search", "wireshark", "bettercap", "recon-ng", "phoneinfoga", "wifi", "bt", "help", "show", "set", "exploit", "use", "search", "banner", "add"]
                 data = input("[Recon menu]: ")
                 if data.split(" ")[0] in inputs:
                     functions[inputs.index(data.split(" ")[0])](data)
