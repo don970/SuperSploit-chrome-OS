@@ -1,2 +1,6 @@
 Changes in version 1.1.0
     * Integrated recon mode into main menu
+    * Tested with 3783 inputs in a row
+
+To upgrade and test:
+    

@@ -1,17 +1,16 @@
 import json
 import os
 import traceback
+import subprocess
+from subprocess import PIPE
 from prompt_toolkit import PromptSession
 from prompt_toolkit.history import FileHistory
 from prompt_toolkit.auto_suggest import AutoSuggestFromHistory
-import subprocess
-from subprocess import PIPE
 from .errors import Error
 from .ToStdOut import ToStdout
 from .help import Help
 from .show import Show
 from .set import SetV
-from .exploithandler import ExploitHandler
 from .use import use
 from .search import Search
 from .banners import banners
@@ -26,6 +25,8 @@ from .reconCore.external_tools.phoneinfoga import Phone
 from .reconCore.external_tools.bettercap import bettercap
 from .reconCore.external_tools.wireshark import wireshark
 
+# debug testing variable
+n = 0
 
 installation = f'{os.getenv("HOME")}/.SuperSploit'
 history = FileHistory(f'{installation}/.data/.history/history')
@@ -39,9 +40,7 @@ env = os.environ
 class Input:
     @classmethod
     def sys_call_Linux(cls, data):
-        shells = DatabaseManagment.findShells()
-        if data in shells:
-            subprocess.run([f"/usr/bin/{data}"])
+        print(data)
         dataList = data.split(' ')
         with open(f"{installation}/.data/Aliases.json") as file:
             Aliases = json.load(file)
@@ -53,7 +52,7 @@ class Input:
             subprocess.run(dataList)
             return True
         except Exception:
-            Error(traceback.format_exc())
+            Error(f"[!] Program not found: {dataList[0]}")
             return False
 
     @classmethod
@@ -85,33 +84,35 @@ class Input:
             if k in data.split(" "):
                 dataList = data.split(' ')[0:len(data.split(" ")) -1]
                 dataList.append(v)
-        inputFixList = ["cd", "clear", "exit"]
+        inputFixList = ["cd", "clear", "exit", "cat"]
         try:
             if dataList[0] in inputFixList:
-                Input_fixes(dataList)
-                return
+                print(dataList)
+                if Input_fixes(dataList):
+                    return
             if data.endswith(" "):
                 data = data.lstrip(" ")
-            functions = [clean, Show.shells, Help.help, Show.show, SetV.SetV, ExploitHandler, use, Search.search, banners, DatabaseManagment.addVariableToDatabase, NameSearch.main, wireshark, bettercap, Phone, WifiScan, bt, Help.help, Show.show, SetV.SetV, ExploitHandler, use, Search.search, banners, DatabaseManagment.addVariableToDatabase]
+            functions = [clean, Show.shells, Help.help, Show.show, SetV.SetV, ExploitHandler, use, Search.search, banners, DatabaseManagment.addVariableToDatabase]
             inputs = ["clean", "shells", "help", "show", "set", "exploit", "use", "search", "banner", "add"]
-            reconFuctions = [cls.recon_ng, NameSearch.main, wireshark, bettercap, Phone, WifiScan, bt, Help.help, Show.show, SetV.SetV, ExploitHandler, use, Search.search, banners, DatabaseManagment.addVariableToDatabase]
+            reconFuctions = [cls.recon_ng, NameSearch.main, wireshark, bettercap, Phone, WifiScan, bt]
             recconInputs = ["recon-ng","name-search", "wireshark", "bettercap", "phoneinfoga", "wifi", "bt"]
             try:
-                print(data.split(" ")[0])
                 if data.split(" ")[0] in inputs:
                     functions[inputs.index(data.split(" ")[0])](data)
-                    return
+                    return True
                 if data.split(" ")[0] in recconInputs:
                     reconFuctions[recconInputs.index(data.split(" ")[0])](data)
-                    return
+                    return True
                 if "Linux" in os.uname():
                     cls.sys_call_Linux(data)
-                    return
+                    return True
                 cls.sys_call_other(data)
             except Exception:
                 Error(traceback.format_exc())
+                return False
         except Exception:
             Error(traceback.format_exc())
+            return False
 
     @classmethod
     def get(cls):

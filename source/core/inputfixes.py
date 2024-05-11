@@ -8,9 +8,14 @@ from .ToStdOut import ToStdout
 class Input_fixes:
     def __init__(self, dataList: list):
         self.list = dataList
-        ListOfFixes = [self.cd, self.clear, self.exit]
-        fixes = ["cd", "clear", "exit"]
+        ListOfFixes = [self.cd, self.clear, self.exit, self.cat]
+        fixes = ["cd", "clear", "exit", "cat"]
         ListOfFixes[fixes.index(dataList[0])]()
+        return
+
+    def cat(self):
+        if len(self.list) < 1:
+            return False
         return
 
     @staticmethod

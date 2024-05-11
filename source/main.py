@@ -10,7 +10,7 @@ class Main:
             """calls the main input handler"""
             Input.get()
         except KeyboardInterrupt:
-            sys.stdout.write(f"Good by {os.getlogin()}")
+            print(f"Good bye. );")
             sys.exit()
 
 

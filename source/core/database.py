@@ -27,6 +27,7 @@ class DatabaseManagment:
                     shells.append(x.split("/")[2])
                 except Exception:
                     pass
+            print(shells)
             return shells
 
     @classmethod
@@ -50,13 +51,16 @@ class DatabaseManagment:
     
     @classmethod
     def addVariableToDatabase(cls, data):
-        if os.path.lexists(path_to_database):
-            with open(path_to_database) as file:
-                database = json.load(file)
-                file.close()
-            database[data.split(" ")[1]] = data.split(" ")[2]
-            with open(path_to_database, "w") as file:
-                file.write(json.dumps(database))
+        try:
+            if os.path.lexists(path_to_database):
+                with open(path_to_database) as file:
+                    database = json.load(file)
+                    file.close()
+                database[data.split(" ")[1]] = data.split(" ")[2]
+                with open(path_to_database, "w") as file:
+                    file.write(json.dumps(database))
+        except Exception:
+            return
 
     @classmethod
     def findTerm(cls):
