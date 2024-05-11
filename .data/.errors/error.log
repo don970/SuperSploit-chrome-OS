@@ -7484,3 +7484,74 @@ Traceback (most recent call last):
     print(e.with_traceback())
           ^^^^^^^^^^^^^^^^^^
 TypeError: BaseException.with_traceback() takes exactly one argument (0 given)
+Traceback (most recent call last):
+  File "/home/donald/.SuperSploit/source/core/inputHandler.py", line 53, in sys_call_Linux
+    subprocess.run(dataList)
+  File "/usr/lib/python3.11/subprocess.py", line 548, in run
+    with Popen(*popenargs, **kwargs) as process:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/subprocess.py", line 1024, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/usr/lib/python3.11/subprocess.py", line 1901, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'name-search'
+Traceback (most recent call last):
+  File "/home/donald/.SuperSploit/source/core/inputHandler.py", line 53, in sys_call_Linux
+    subprocess.run(dataList)
+  File "/usr/lib/python3.11/subprocess.py", line 548, in run
+    with Popen(*popenargs, **kwargs) as process:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/subprocess.py", line 1024, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/usr/lib/python3.11/subprocess.py", line 1901, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'name-search'
+Traceback (most recent call last):
+  File "/home/donald/.SuperSploit/source/core/inputHandler.py", line 53, in sys_call_Linux
+    subprocess.run(dataList)
+  File "/usr/lib/python3.11/subprocess.py", line 548, in run
+    with Popen(*popenargs, **kwargs) as process:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/subprocess.py", line 1024, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/usr/lib/python3.11/subprocess.py", line 1901, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'name-search'
+Traceback (most recent call last):
+  File "/home/donald/.SuperSploit/source/core/inputHandler.py", line 53, in sys_call_Linux
+    subprocess.run(dataList)
+  File "/usr/lib/python3.11/subprocess.py", line 548, in run
+    with Popen(*popenargs, **kwargs) as process:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/subprocess.py", line 1024, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/usr/lib/python3.11/subprocess.py", line 1901, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'recon'
+Traceback (most recent call last):
+  File "/home/donald/.SuperSploit/source/core/inputHandler.py", line 53, in sys_call_Linux
+    subprocess.run(dataList)
+  File "/usr/lib/python3.11/subprocess.py", line 548, in run
+    with Popen(*popenargs, **kwargs) as process:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/subprocess.py", line 1024, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/usr/lib/python3.11/subprocess.py", line 1901, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'recon'
+Traceback (most recent call last):
+  File "/home/donald/.SuperSploit/source/core/inputHandler.py", line 53, in sys_call_Linux
+    subprocess.run(dataList)
+  File "/usr/lib/python3.11/subprocess.py", line 548, in run
+    with Popen(*popenargs, **kwargs) as process:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/subprocess.py", line 1024, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/usr/lib/python3.11/subprocess.py", line 1901, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'name-search'
+Traceback (most recent call last):
+  File "/home/donald/.SuperSploit/source/core/inputHandler.py", line 128, in check
+    reconFuctions[inputs.index(data.split(" ")[0])](data)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: 'name-search' is not in list

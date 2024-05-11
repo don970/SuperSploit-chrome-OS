@@ -18,6 +18,14 @@ from .banners import banners
 from .database import DatabaseManagment
 from .inputfixes import Input_fixes
 from .clean import clean
+from .exploithandler import ExploitHandler
+from .reconCore.networkRecon import WifiScan
+from .reconCore.Bluetooth import bt
+from .reconCore.external_tools.namesearch import NameSearch
+from .reconCore.external_tools.phoneinfoga import Phone
+from .reconCore.external_tools.bettercap import bettercap
+from .reconCore.external_tools.wireshark import wireshark
+
 
 installation = f'{os.getenv("HOME")}/.SuperSploit'
 history = FileHistory(f'{installation}/.data/.history/history')
@@ -65,6 +73,11 @@ class Input:
         """This handles all the input"""
         pass
 
+
+    def recon_ng(self):
+        subprocess.run(["sudo", "recon-ng"])
+        return 
+
     @classmethod
     def check(cls, data):
         dataList = data.split(" ")
@@ -79,12 +92,17 @@ class Input:
                 return
             if data.endswith(" "):
                 data = data.lstrip(" ")
-            functions = [clean, Show.shells, Recon, Help.help, Show.show, SetV.SetV, ExploitHandler, use, Search.search,
-                         banners, DatabaseManagment.addVariableToDatabase]
-            inputs = ["clean", "shells", "recon", "help", "show", "set", "exploit", "use", "search", "banner", "add"]
+            functions = [clean, Show.shells, Help.help, Show.show, SetV.SetV, ExploitHandler, use, Search.search, banners, DatabaseManagment.addVariableToDatabase, NameSearch.main, wireshark, bettercap, Phone, WifiScan, bt, Help.help, Show.show, SetV.SetV, ExploitHandler, use, Search.search, banners, DatabaseManagment.addVariableToDatabase]
+            inputs = ["clean", "shells", "help", "show", "set", "exploit", "use", "search", "banner", "add"]
+            reconFuctions = [cls.recon_ng, NameSearch.main, wireshark, bettercap, Phone, WifiScan, bt, Help.help, Show.show, SetV.SetV, ExploitHandler, use, Search.search, banners, DatabaseManagment.addVariableToDatabase]
+            recconInputs = ["recon-ng","name-search", "wireshark", "bettercap", "phoneinfoga", "wifi", "bt"]
             try:
+                print(data.split(" ")[0])
                 if data.split(" ")[0] in inputs:
                     functions[inputs.index(data.split(" ")[0])](data)
+                    return
+                if data.split(" ")[0] in recconInputs:
+                    reconFuctions[recconInputs.index(data.split(" ")[0])](data)
                     return
                 if "Linux" in os.uname():
                     cls.sys_call_Linux(data)
