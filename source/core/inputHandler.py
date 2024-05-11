@@ -16,7 +16,6 @@ from .use import use
 from .search import Search
 from .banners import banners
 from .database import DatabaseManagment
-from .recon import Recon
 from .inputfixes import Input_fixes
 from .clean import clean
 
