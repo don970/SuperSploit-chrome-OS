@@ -3,6 +3,7 @@ To integrate a exploit simply copy the code bellow in to your file.
 
 # integrated = True
 #!#!#!
+# CVE: CVE-XXX-XXXX
 # Exploit description
 #
 # REQUIRED OPTIONS
