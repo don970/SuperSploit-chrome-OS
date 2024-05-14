@@ -1,4 +1,4 @@
-********************************Exploit integration with SuperSploit*****************************************************
+********************************Exploit integration with SuperSploit***************************
 To integrate a exploit simply copy the code bellow in to your file.
 
 # integrated = True
@@ -15,3 +15,10 @@ with open(f"{installation}/.data/data.json", 'r') as file:
     di = json.load(file)
     file.close()
 global di
+************************************* c files ********************************************
+/* #!#!#!
+CVE: CVE-XXX-XXXX
+# exploit description
+#
+# REQUIRED OPTIONS
+#!#!#! */
