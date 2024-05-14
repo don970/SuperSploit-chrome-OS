@@ -29,3 +29,20 @@ class Error:
             """here we raise OsError because the only real possible error is a io or file not found"""
             sys.stderr.write(str(e))
             raise OSError
+
+    @staticmethod
+    def silent(data):
+        if "str" not in str(type(data)):
+            try:
+                data = data.decode()
+                pass
+            except Exception:
+                data = f"{str(data)}"
+                pass
+        if not data.endswith("\n"):
+            data = f"{data}\n"
+        with open(f"{installation}/.data/.errors/error.log", "a") as stdout:
+            stdout.write(data)
+            stdout.close()
+        write(data)
+        return

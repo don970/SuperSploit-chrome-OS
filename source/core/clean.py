@@ -1,5 +1,9 @@
+from .ToStdOut import ToStdout
+print = ToStdout.write
+
 class clean:
     def __init__(self, ar):
+        print("[*] Doing a full clean. Clearing history, error log along with all scan and target data.")
         with open(".data/.personSearch", "w") as file:
             file.write(" ")
             file.close()
