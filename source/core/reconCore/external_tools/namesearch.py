@@ -22,10 +22,10 @@ class NameSearch:
 
 
     @classmethod
-    def simpleNamesSearch(cls, arg):
+    def simpleNamesSearch(cls):
         name = input("Enter the name to search: ")
         sdb = ["facebook.com", "instagram.com", 'linkedin.com', "Avk.com", "twitter.com"]
-        list1 = []
+        list1 = [""]
         print("Using site dictionary to perform a search return")
         for site in sdb:
             searchPhrase = f"https://www.google.com/search?q=site%3A%22{site}%22+%7C+intext%3A%22{name}%22"
@@ -37,7 +37,7 @@ class NameSearch:
     def help(cls):
         print("""[OSNIT Help Menu]
 help - Shows this help menu.
-dorks - Returns a list of google dork links for the 
+dork - Returns a list of google dork links for the 
         name and various social media site. 
 """)
         pass
@@ -47,6 +47,7 @@ dorks - Returns a list of google dork links for the
         print("OSNIT Name Search Tool")
         inputs = ["help", "dork"]
         funs = [cls.help, cls.simpleNamesSearch]
+        print("\033[H\033[J")
         while True:
             try:
                 data = input("[ONST]: ")

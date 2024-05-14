@@ -1,4 +1,3 @@
-
 if [ -d "$HOME/.SuperSploit" ]; then
   if [ $UID == 0 ]; then
     echo "Do not run as root"

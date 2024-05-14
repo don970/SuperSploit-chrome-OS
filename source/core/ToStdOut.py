@@ -4,6 +4,7 @@ import sys
 class ToStdout:
     @staticmethod
     def write(data):
+        """we use this instead of print for errors with formating output"""
         if "str" not in str(type(data)):
             try:
                 data = data.decode()
@@ -13,10 +14,7 @@ class ToStdout:
                 pass
         if not data.endswith("\n"):
             data = f"{data}\n"
-        try:
-            print(data)
-        except Exception as e:
-            with open("/dev/stdout", "w") as stdout:
-                stdout.write(str(e))
-                stdout.close()
+        with open("/dev/stdout", "w") as stdout:
+            stdout.write(data)
+            stdout.close()
             return

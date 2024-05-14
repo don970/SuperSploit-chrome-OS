@@ -25,9 +25,6 @@ from .reconCore.external_tools.phoneinfoga import Phone
 from .reconCore.external_tools.bettercap import bettercap
 from .reconCore.external_tools.wireshark import wireshark
 
-# debug testing variable
-n = 0
-
 installation = f'{os.getenv("HOME")}/.SuperSploit'
 history = FileHistory(f'{installation}/.data/.history/history')
 with open(".data/Aliases.json") as file:
@@ -40,7 +37,6 @@ env = os.environ
 class Input:
     @classmethod
     def sys_call_Linux(cls, data):
-        print(data)
         dataList = data.split(' ')
         with open(f"{installation}/.data/Aliases.json") as file:
             Aliases = json.load(file)
@@ -79,15 +75,22 @@ class Input:
 
     @classmethod
     def check(cls, data):
+        # create a list copy of supplied data
         dataList = data.split(" ")
         for k, v in aliases.items():
             if k in data.split(" "):
                 dataList = data.split(' ')[0:len(data.split(" ")) -1]
                 dataList.append(v)
+
+        # create a list to check for input fixes
         inputFixList = ["cd", "clear", "exit", "cat"]
+
+
         try:
+            if "&&" in data:
+                Input_fixes.continues(data)
+                return
             if dataList[0] in inputFixList:
-                print(dataList)
                 if Input_fixes(dataList):
                     return
             if data.endswith(" "):
@@ -118,6 +121,7 @@ class Input:
     def get(cls):
         banners()
         while True:
+            DatabaseManagment.getCVE()
             try:
                 data = PromptSession(history=history, auto_suggest=AutoSuggestFromHistory(), enable_history_search=True)
                 inp = data.prompt(f"[SuperSploit]: ")

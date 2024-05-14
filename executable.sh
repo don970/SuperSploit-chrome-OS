@@ -13,3 +13,4 @@ sudo cp logo1.png /usr/share/icons/locolor/16x16/apps/
 echo "Changing permissions for executable file"
 sudo chmod +x /bin/supersploit
 sudo rm supersploit.desktop supersploit.c
+echo "run supersploit to start the program"

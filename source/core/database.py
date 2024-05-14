@@ -15,6 +15,28 @@ class DatabaseManagment:
     def __init__(self):
         pass
 
+    @classmethod
+    def getCVE(cls):
+        with open(cls.get()["EXPLOIT"], "r") as file:
+            data = file.read().split("\n")
+            file.close()
+        cveCast = ""
+        for x in data:
+            if "CVE: CVE" in x:
+                cveCast += x
+        try:
+            cve = cveCast.split("CVE:")[1]
+        except IndexError:
+            cls.directlyModify(["CVE", None])
+            return None
+        Str = ""
+        for x in list(cve):
+            if x == " ":
+                pass
+            else:
+                Str += x
+        cls.directlyModify(["CVE", Str])
+        return Str
 
     @classmethod
     def findShells(cls):
@@ -79,6 +101,8 @@ class DatabaseManagment:
             with open(f"{installlocation}/.data/data.json") as file:
                 variables = json.load(file)
                 file.close()
+            if "CVE" in data[0]:
+                variables["CVE"] = data[1]
             if "exploit" in data[0]:
                 variables["EXPLOIT"] = data[1]
             if "payload" in data[0]:
