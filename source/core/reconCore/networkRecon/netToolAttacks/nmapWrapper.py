@@ -113,3 +113,7 @@ class nmap:
             file.close()
         return "[*] Full scan logged to .data/.custom_scan"
 
+    def traceroute(self):
+        run(["traceroute", "google.com"])
+        return
+

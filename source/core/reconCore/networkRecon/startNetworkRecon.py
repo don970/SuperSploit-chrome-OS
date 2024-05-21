@@ -95,8 +95,8 @@ class WifiScan:
     def GetData(self, ip_subnet_and_host):
         n = nmap(ip_subnet_and_host)
         while True:
-            funcs = [n.scan_whole_network, n.targetedScan, help.help, n.show_target_list, n.Import, n.customScan]
-            inputs = ["get-targets", "scan-target", "help", "view-targets", "import-targets", "custom-scan"]
+            funcs = [n.scan_whole_network, n.targetedScan, help.help, n.show_target_list, n.Import, n.customScan, n.traceroute]
+            inputs = ["get-targets", "scan-target", "help", "view-targets", "import-targets", "custom-scan", "traceroute"]
             data = input(f"[WiFi Menu]: ")
             for x in closing_statements:
                 if x in data:

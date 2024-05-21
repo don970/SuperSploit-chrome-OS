@@ -2,12 +2,15 @@ Changes in version 1.1.0
     * Updated the input handler to allow the && symbol
         to be used for multiple commands
     * Integrated recon mode into main menu
-    * Tested with 3783 inputs in a row
     * Updated exploit handler to show cve number if a
         cve is detected in the exploit file
-    *
+    * Added exploits for the first 4 challenges of
+        hack the box
 
 To upgrade and test:
-    Intergrate bt  and wifi commands in to        main menu
+    * Integrate bt and wifi commands in to the main menu
+    * Fix formate issue with Linux kernel 3.4.5 local priv
+        esc files
+
 
 Error log:

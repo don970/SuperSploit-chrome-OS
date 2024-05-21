@@ -32,5 +32,6 @@ commands:
                 scan-target - Uses nmap -A argument to do a detailed scan
                 save-targets - Makes a persistent target list
                 view-targets - Shows current target list
+                traceroute - starts a route trace to google.com
 
 For help with integrating a exploit type help integrate
