@@ -4,13 +4,16 @@ Changes in version 1.1.0
     * Integrated recon mode into main menu
     * Updated exploit handler to show cve number if a
         cve is detected in the exploit file
-    * Added exploits for the first 4 challenges of
-        hack the box
+    * Integrated the wifi scan methods in to the main menu
+    * Added the ability to append the output of a command to a file on the filesystem
+    * Added the ability to use built in commands with system commands via && symbol
+
 
 To upgrade and test:
-    * Integrate bt and wifi commands in to the main menu
+    * Integrate bt commands in to the main menu
     * Fix formate issue with Linux kernel 3.4.5 local priv
         esc files
+    * update name search to allow spaces to be decoded
 
 
 Error log:

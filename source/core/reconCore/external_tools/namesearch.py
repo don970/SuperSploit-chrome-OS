@@ -30,13 +30,16 @@ class NameSearch:
         for site in sdb:
             searchPhrase = f"https://www.google.com/search?q=site%3A%22{site}%22+%7C+intext%3A%22{name}%22"
             list1.append(searchPhrase)
-        for x in list1:
-            print(f"To search {sdb[list1.index(x)]} just copy the link and past it into a browser.")
-            print(x)
+        try:
+            for x in list1:
+                print(f"To search {sdb[list1.index(x)]} just copy the link and past it into a browser.")
+                print(x)
+        except IndexError:
+            return
     @classmethod
     def help(cls):
         print("""[OSNIT Help Menu]
-help - Shows this help menu.
+help - Shows this help menu. 3
 dork - Returns a list of google dork links for the 
         name and various social media site. 
 """)

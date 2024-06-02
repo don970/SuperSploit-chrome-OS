@@ -30,18 +30,15 @@ sudo apt-get install bettercap wireshark -y
 sudo apt-get install python3-pyfiglet -y
 sudo apt-get install netcat-traditional adb fastboot pip -y""".split("\n")
 
+    # unused command at the moment
     command_one = """pip install --break-system-packages pure-python-adb
 pip install --break-system-packages  pwn
 pip install --break-system-packages requests
 bash executable.sh""".split('\n')
 
     # we want this later for easy fixing
-    ccc = """cd $HOME/.SuperSploit/source/core/reconCore/external_tools/ && git clone https://github.com/lanmaster53/recon-ng.git
+    reconng = """cd $HOME/.SuperSploit/source/core/reconCore/external_tools/ && git clone https://github.com/lanmaster53/recon-ng.git
 cd recon-ng && pip install --break-system-packages -r REQUIREMENTS
-
-/home/donald/.SuperSploit
-
-sudo mv ./phoneinfoga /usr/local/bin/phoneinfoga
 cd $CWD
 """
 
@@ -51,10 +48,10 @@ cd $CWD
 
     print("installing phoneinfoga")
     req = requests.get("https://raw.githubusercontent.com/sundowndev/phoneinfoga/master/support/scripts/install")
-    with open("install", "w") as file:
+    with open("/tmp/install", "w") as file:
         file.write(req.content.decode())
         file.close()
-    subprocess.run(["bash", "install"])
+    subprocess.run(["bash", "/tmp/install"])
     subprocess.run(["sudo", "mv", "phoneinfoga", "/usr/local/bin/phoneinfoga"])
 
     programs = os.listdir("/bin")
@@ -64,6 +61,7 @@ cd $CWD
 
     for x in terms:
         if x in programs:
+            print(f"[*] {x} already installed")
             term = True
 
     if not term:

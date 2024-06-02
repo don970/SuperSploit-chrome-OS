@@ -1,1 +1,1 @@
-from .startNetworkRecon import WifiScan
+from .nmapWrapper import nmap

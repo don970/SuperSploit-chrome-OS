@@ -2,6 +2,7 @@ import json
 import os
 import traceback
 import subprocess
+from socket import gethostname
 from subprocess import PIPE
 from prompt_toolkit import PromptSession
 from prompt_toolkit.history import FileHistory
@@ -18,12 +19,12 @@ from .database import DatabaseManagment
 from .inputfixes import Input_fixes
 from .clean import clean
 from .exploithandler import ExploitHandler
-from .reconCore.networkRecon import WifiScan
 from .reconCore.Bluetooth import bt
 from .reconCore.external_tools.namesearch import NameSearch
 from .reconCore.external_tools.phoneinfoga import Phone
 from .reconCore.external_tools.bettercap import bettercap
 from .reconCore.external_tools.wireshark import wireshark
+from .reconCore.networkRecon import nmap as n
 
 installation = f'{os.getenv("HOME")}/.SuperSploit'
 history = FileHistory(f'{installation}/.data/.history/history')
@@ -32,7 +33,17 @@ with open(".data/Aliases.json") as file:
     file.close()
 
 env = os.environ
+def get_network_info():
+    host = gethostname()
+    data = subprocess.run(["ip", "addr"], capture_output=True).stdout.decode().split("\n")
+    for i in data:
+        if "inet" and "brd" in i and ":" not in i:
+            ip = i.split(" ")[5].split('/')[0]
+            subnet = i.split(" ")[5].split('/')[1]
+            return ip, subnet, host
 
+
+n = n(get_network_info())
 
 class Input:
     @classmethod
@@ -79,7 +90,7 @@ class Input:
         dataList = data.split(" ")
         for k, v in aliases.items():
             if k in data.split(" "):
-                dataList = data.split(' ')[0:len(data.split(" ")) -1]
+                dataList = data.split(' ')[0:len(data.split(" ")) - 1]
                 dataList.append(v)
 
         # create a list to check for input fixes
@@ -88,7 +99,14 @@ class Input:
 
         try:
             if "&&" in data:
-                Input_fixes.continues(data)
+                fix = Input_fixes.continues(data)
+                if fix == 0:
+                    return
+                else:
+                    data = fix[len(fix) - 1]
+                    dataList = data.split(' ')
+            if ">" in data:
+                Input_fixes.out(data)
                 return
             if dataList[0] in inputFixList:
                 if Input_fixes(dataList):
@@ -97,14 +115,19 @@ class Input:
                 data = data.lstrip(" ")
             functions = [clean, Show.shells, Help.help, Show.show, SetV.SetV, ExploitHandler, use, Search.search, banners, DatabaseManagment.addVariableToDatabase]
             inputs = ["clean", "shells", "help", "show", "set", "exploit", "use", "search", "banner", "add"]
-            reconFuctions = [cls.recon_ng, NameSearch.main, wireshark, bettercap, Phone, WifiScan, bt]
-            recconInputs = ["recon-ng","name-search", "wireshark", "bettercap", "phoneinfoga", "wifi", "bt"]
+            reconFuctions = [cls.recon_ng, NameSearch.main, wireshark, bettercap, Phone, bt]
+            recconInputs = ["recon-ng", "name-search", "wireshark", "bettercap", "phoneinfoga", "bt"]
+            Wififuncs = [n.scan_whole_network, n.targetedScan, n.show_target_list, n.Import, n.customScan, n.traceroute]
+            WifiInputs = ["get-targets", "scan-target", "view-targets", "import-targets", "custom-scan", "traceroute"]
             try:
                 if data.split(" ")[0] in inputs:
                     functions[inputs.index(data.split(" ")[0])](data)
                     return True
                 if data.split(" ")[0] in recconInputs:
                     reconFuctions[recconInputs.index(data.split(" ")[0])](data)
+                    return True
+                if data.split(" ")[0] in WifiInputs:
+                    print(Wififuncs[WifiInputs.index(data.split(" ")[0])]())
                     return True
                 if "Linux" in os.uname():
                     cls.sys_call_Linux(data)
