@@ -1,7 +1,10 @@
+import json
+import os
+
 from .database import DatabaseManagment
 from .ToStdOut import ToStdout
 from .exploithandler import exploitDetails
-
+installation = f'{os.getenv("HOME")}/.SuperSploit'
 
 class Show:
 
@@ -19,6 +22,13 @@ class Show:
             return
         elif "details" in data.split(" ")[1]:
             exploitDetails()
+            return
+        elif "aliases" in data.split(" ")[1]:
+            with open(f"{installation}/.data/Aliases.json") as file:
+                aliases = json.load(file)
+                file.close()
+            for k, v in aliases.items():
+                ToStdout.write(f"{k} = {v}")
             return
         elif len(data.split(' ')) > 1:
             for x in data.split(" "):

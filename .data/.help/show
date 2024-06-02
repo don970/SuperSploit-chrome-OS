@@ -10,3 +10,4 @@
       [Example]:
         show R_HOST L_HOST
         show details
+        show aliases

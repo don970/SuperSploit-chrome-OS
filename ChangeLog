@@ -8,12 +8,10 @@ Changes in version 1.1.0
     * Added the ability to append the output of a command to a file on the filesystem
     * Added the ability to use built in commands with system commands via && symbol
 
-
 To upgrade and test:
     * Integrate bt commands in to the main menu
-    * Fix formate issue with Linux kernel 3.4.5 local priv
-        esc files
-    * update name search to allow spaces to be decoded
+    * Fix formate issue with Linux kernel 3.4.5 local privilege esc files
+    * Update name search to allow spaces to be decoded
 
 
 Error log:
