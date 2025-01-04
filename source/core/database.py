@@ -17,26 +17,29 @@ class DatabaseManagment:
 
     @classmethod
     def getCVE(cls):
-        with open(cls.get()["EXPLOIT"], "r") as file:
-            data = file.read().split("\n")
-            file.close()
-        cveCast = ""
-        for x in data:
-            if "CVE: CVE" in x:
-                cveCast += x
         try:
-            cve = cveCast.split("CVE:")[1]
-        except IndexError:
-            cls.directlyModify(["CVE", None])
-            return None
-        Str = ""
-        for x in list(cve):
-            if x == " ":
-                pass
-            else:
-                Str += x
-        cls.directlyModify(["CVE", Str])
-        return Str
+            with open(cls.get()["EXPLOIT"], "r") as file:
+                data = file.read().split("\n")
+                file.close()
+            cveCast = ""
+            for x in data:
+                if "CVE: CVE" in x:
+                    cveCast += x
+            try:
+                cve = cveCast.split("CVE:")[1]
+            except IndexError:
+                cls.directlyModify(["CVE", None])
+                return None
+            Str = ""
+            for x in list(cve):
+                if x == " ":
+                    pass
+                else:
+                    Str += x
+            cls.directlyModify(["CVE", Str])
+            return Str
+        except Exception:
+            return "None"
 
     @classmethod
     def findShells(cls):
@@ -69,8 +72,7 @@ class DatabaseManagment:
         if "import socket" in data or "from socket import" in data:
             return True
         return False
-    
-    
+
     @classmethod
     def addVariableToDatabase(cls, data):
         try:
@@ -80,7 +82,7 @@ class DatabaseManagment:
                     file.close()
                 database[data.split(" ")[1]] = data.split(" ")[2]
                 with open(path_to_database, "w") as file:
-                    file.write(json.dumps(database))
+                    file.write(json.dumps(database, sort_keys=True, indent=4))
         except Exception:
             return
 
@@ -101,16 +103,21 @@ class DatabaseManagment:
             with open(f"{installlocation}/.data/data.json") as file:
                 variables = json.load(file)
                 file.close()
+
             if "CVE" in data[0]:
                 variables["CVE"] = data[1]
+
             if "exploit" in data[0]:
                 variables["EXPLOIT"] = data[1]
+
             if "payload" in data[0]:
                 variables["PAYLOAD"] = data[1]
+
             if "target" in data[0]:
                 variables["R_HOST"] = data[1]
+
             with open(f"{installlocation}/.data/data.json", "w") as file:
-                file.write(json.dumps(variables))
+                file.write(json.dumps(variables, sort_keys=True, indent=4))
                 file.close()
         except Exception:
             error(traceback.format_exc())

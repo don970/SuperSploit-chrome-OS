@@ -12,6 +12,7 @@ To upgrade and test:
     * Integrate bt commands in to the main menu
     * Fix formate issue with Linux kernel 3.4.5 local privilege esc files
     * Update name search to allow spaces to be decoded
+    * Integrate newly coded stuff
 
 
 Error log:

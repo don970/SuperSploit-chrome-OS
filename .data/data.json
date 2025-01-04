@@ -1,1 +1,13 @@
-{"R_HOST": "10.129.41.16", "L_HOST": "0.0.0.0", "R_PORT": "9999", "L_PORT": "9999", "EXPLOIT": "/home/donald/.SuperSploit/exploits/routers/GL.iNet AR300M v3.216 Remote Code Execution CVE-2023-46456 Exploit.py", "PAYLOAD": "/home/donald/.SuperSploit/payloads/python/multiPlatform.py", "STAGED": false, "SHELL": "/bin/zsh", "EXE": "sudo", "DURATION": "5", "CVE": "CVE-2023-46456"}
+{
+    "CVE": null,
+    "DURATION": "5",
+    "EXE": "sudo",
+    "EXPLOIT": "/home/donaldford05091997/.SuperSploit/exploits/chrome/chrome os sudo nopasswd.py",
+    "L_HOST": "0.0.0.0",
+    "L_PORT": "9999",
+    "PAYLOAD": "/home/donaldford05091997/.SuperSploit/payloads/SE/fake_sudo_prompt.py",
+    "R_HOST": "10.129.41.16",
+    "R_PORT": "9999",
+    "SHELL": "/bin/zsh",
+    "STAGED": false
+}
