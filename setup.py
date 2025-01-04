@@ -21,7 +21,7 @@ try:
 
     installation = f'{os.getenv("HOME")}/.SuperSploit'
     with open(f"{installation}/.data/Aliases.json", "w") as file:
-        file.write(json.dumps(a))
+        file.write(json.dumps(a, sort_keys=True, indent=4))
         file.close()
         
     
