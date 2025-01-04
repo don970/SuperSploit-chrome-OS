@@ -6,8 +6,8 @@ import traceback
 from .errors import Error as error
 
 global path_to_datbase
-installlocation = f'{os.getenv("HOME")}/.SuperSploit'
-path_to_database = f"{installlocation}/.data/data.json"
+install_location = f'{os.getenv("HOME")}/.SuperSploit'
+path_to_database = f"{install_location}/.data/data.json"
 
 
 class DatabaseManagment:
@@ -89,7 +89,7 @@ class DatabaseManagment:
     @classmethod
     def findTerm(cls):
         term = None
-        with open(f"{installlocation}/.data/.terminals", "r") as file:
+        with open(f"{install_location}/.data/.terminals", "r") as file:
             terms = file.read().split("\n")
             file.close()
         for x in terms:
@@ -100,7 +100,7 @@ class DatabaseManagment:
     @classmethod
     def directlyModify(cls, data: list):
         try:
-            with open(f"{installlocation}/.data/data.json") as file:
+            with open(f"{install_location}/.data/data.json") as file:
                 variables = json.load(file)
                 file.close()
 
@@ -116,7 +116,7 @@ class DatabaseManagment:
             if "target" in data[0]:
                 variables["R_HOST"] = data[1]
 
-            with open(f"{installlocation}/.data/data.json", "w") as file:
+            with open(f"{install_location}/.data/data.json", "w") as file:
                 file.write(json.dumps(variables, sort_keys=True, indent=4))
                 file.close()
         except Exception:
@@ -134,15 +134,15 @@ class DatabaseManagment:
     @staticmethod
     def getExploits():
         exploits = []
-        for x in os.listdir(f"{installlocation}/exploits/"):
-            for i in os.listdir(f"{installlocation}/exploits/{x}"):
-                exploits.append(f"{installlocation}/exploits/{x}/{i}")
+        for x in os.listdir(f"{install_location}/exploits/"):
+            for i in os.listdir(f"{install_location}/exploits/{x}"):
+                exploits.append(f"{install_location}/exploits/{x}/{i}")
         return exploits
 
     @staticmethod
     def getPayloads():
         exploits = []
-        for x in os.listdir(f"{installlocation}/payloads/"):
-            for i in os.listdir(f"{installlocation}/payloads/{x}"):
-                exploits.append(f"{installlocation}/payloads/{x}/{i}")
+        for x in os.listdir(f"{install_location}/payloads/"):
+            for i in os.listdir(f"{install_location}/payloads/{x}"):
+                exploits.append(f"{install_location}/payloads/{x}/{i}")
         return exploits
