@@ -28,13 +28,12 @@ try:
     commands = """sudo apt-get install python3-prompt-toolkit -y
 sudo apt-get install bettercap wireshark -y
 sudo apt-get install python3-pyfiglet -y
-sudo apt-get install netcat-traditional adb fastboot pip -y""".split("\n")
-
-    # unused command at the moment
-    command_one = """pip install --break-system-packages pure-python-adb
+sudo apt-get install netcat-traditional adb fastboot pip -y
+pip install --break-system-packages pure-python-adb
 pip install --break-system-packages  pwn
 pip install --break-system-packages requests
-bash executable.sh""".split('\n')
+bash executable.sh
+""".split("\n")
 
     # we want this later for easy fixing
     reconng = """cd $HOME/.SuperSploit/source/core/reconCore/external_tools/ && git clone https://github.com/lanmaster53/recon-ng.git
@@ -77,8 +76,7 @@ cd $CWD
             subprocess.run(STR.split(" "))
 
     for x in commands:
-        if commands.index(x) < 3:
-            subprocess.run(x.split(" "))
+        subprocess.run(x.split(" "))
 
 except Exception as e:
     print(traceback.format_exc())
