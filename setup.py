@@ -14,6 +14,11 @@ false = False
 class SuperSploit:
   
   def __init__(self):
+    self.create_aliases()
+    self.install_dependencys()
+    self.install_phoneinfoga()
+    self.install_recon_ng()
+    self.findTerm()
     return
 
 def create_aliases(self):
@@ -50,7 +55,7 @@ def install_recon_ng(self):
   return 0
 
 def install_dependencys(self):
-  apt_deps = ["python3-prompt-toolkit", "bettercap", "wireshark", "python3-pyfiglet", "netcat-traditional", "adb", "fastboot", "pip"]
+  apt_deps = ["bettercap", "wireshark", "python3-pyfiglet", "netcat-traditional", "adb", "fastboot", "pip"]
   pip_deps = ["pure-python-adb", "pwn"]
   
   # install the apt dependencys
@@ -89,4 +94,4 @@ def findTerm(self):
       STR = f"sudo apt-get install tilix"
       subprocess.run(STR.split(" "))
 
-
+SuperSploit()
