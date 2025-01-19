@@ -1,4 +1,4 @@
-from json import 
+from json import dumps
 from os import getenv, chdir, getcwd
 from subprocess import run
 import traceback
