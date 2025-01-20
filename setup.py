@@ -88,12 +88,12 @@ class SuperSploit:
         return 0
     for x in terms:
       print(f"{terms.index(x)}: {x}")
-      try:
-        data = input("Enter the index of the terminal program to attempt to install: ")
-        STR = f"sudo apt-get install {terms[int(data)]}"
-        run(STR.split(" "))
-      except ValueError:
-        STR = f"sudo apt-get install tilix"
-        run(STR.split(" "))
+    try:
+      data = input("Enter the index of the terminal program to attempt to install: ")
+      STR = f"sudo apt-get install {terms[int(data)]}"
+      run(STR.split(" "))
+    except ValueError:
+      STR = f"sudo apt-get install tilix"
+      run(STR.split(" "))
 
 SuperSploit()
