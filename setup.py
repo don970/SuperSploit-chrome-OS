@@ -76,8 +76,6 @@ class SuperSploit:
   def findTerm(self):
     programs = listdir("/bin")
     run(["clear"])
-    input("[*] The following will attempt to install a terminal program defaults to Tilix.\nPress enter to continue")
-    
     with open(".data/.terminals") as file:
       terms = file.read().split("\n")
       file.close()
