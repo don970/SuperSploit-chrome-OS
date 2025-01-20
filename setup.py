@@ -1,4 +1,4 @@
-from json import dumps
+import json
 from os import getenv, chdir, getcwd, listdir
 from subprocess import run
 import traceback
@@ -28,7 +28,7 @@ class SuperSploit:
     # lets write the diction to a json file using the json libary
     with open(f"{installation}/.data/Aliases.json", "w") as file:
       # create the json dump
-      data = dumps(a, sort_keys=True, indent=4)    
+      data = json.dumps(a, sort_keys=True, indent=4)    
       # write the data to the json file
       file.write(data)
       # close the file
