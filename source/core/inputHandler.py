@@ -28,6 +28,8 @@ from .reconCore.networkRecon import nmap as n
 
 installation = f'{os.getenv("HOME")}/.SuperSploit'
 history = FileHistory(f'{installation}/.data/.history/history')
+path = os.getenv("PATH").split(":")
+
 with open(".data/Aliases.json") as file:
     aliases = json.load(file)
     file.close()
@@ -55,12 +57,12 @@ class Input:
         for k, v in Aliases.items():
             if k in dataList:
                 dataList[dataList.index(k)] = v
-        try:
-            subprocess.run(dataList)
-            return True
-        except Exception:
-            Error(f"[!] Program not found: {dataList[0]}")
-            return False
+        for x in path:
+            if os.path.exists(f"{x}/{dataList[0]}"):
+                subprocess.run(dataList)
+                return True
+        Error(f"[!] Program not found: {dataList[0]}")
+        return False
 
     @classmethod
     def sys_call_other(cls, data):
@@ -78,7 +80,6 @@ class Input:
     def __init__(self):
         """This handles all the input"""
         pass
-
 
     def recon_ng(self):
         subprocess.run(["sudo", "recon-ng"])

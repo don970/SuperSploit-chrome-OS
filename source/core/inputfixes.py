@@ -1,8 +1,8 @@
 import os
-import subprocess
 import sys
-import threading
+import subprocess
 from .ToStdOut import ToStdout
+
 true = True
 false = False
 print = ToStdout.write
@@ -42,7 +42,6 @@ class Input_fixes:
         if 1 in proc_exit_codes:
             return i
         return 0
-
 
     def cat(self):
         if len(self.list) < 1:

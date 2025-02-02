@@ -1,4 +1,6 @@
 Changes in version 1.1.0
+    * Updated the exploit handler
+    * Updated setup.py file
     * Updated the input handler to allow the && symbol
         to be used for multiple commands
     * Integrated recon mode into main menu

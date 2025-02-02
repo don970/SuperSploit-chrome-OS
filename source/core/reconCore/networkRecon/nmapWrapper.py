@@ -38,8 +38,8 @@ class nmap:
             for x in file.read().split("\n"):
                 self.targetlist.append(x)
             file.close()
-
         return "[*] Targets saved."
+
     def show_target_list(self):
         if len(self.targetlist) == 0:
             return "[!] Target list is not populated"

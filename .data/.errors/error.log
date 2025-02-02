@@ -1,1 +1,224 @@
- 
+ Traceback (most recent call last):
+  File "/home/donald/.SuperSploit/source/core/inputHandler.py", line 113, in check
+    if Input_fixes(dataList):
+       ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/donald/.SuperSploit/source/core/inputfixes.py", line 15, in __init__
+    ListOfFixes[fixes.index(dataList[0])]()
+  File "/home/donald/.SuperSploit/source/core/inputfixes.py", line 55, in cat
+    with open(self.list[1], "r") as file:
+         ^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '.data/.target_scan'
+Traceback (most recent call last):
+  File "/home/donald/.SuperSploit/source/core/inputHandler.py", line 113, in check
+    if Input_fixes(dataList):
+       ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/donald/.SuperSploit/source/core/inputfixes.py", line 16, in __init__
+    ListOfFixes[fixes.index(dataList[0])]()
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: 'id' is not in list
+Traceback (most recent call last):
+  File "/home/donald/.SuperSploit/source/core/inputHandler.py", line 113, in check
+    if Input_fixes(dataList):
+       ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/donald/.SuperSploit/source/core/inputfixes.py", line 17, in __init__
+    self.pipe()
+  File "/home/donald/.SuperSploit/source/core/inputfixes.py", line 89, in pipe
+    proc2 = subprocess.Popen(data[1].split(" "), stdin=subprocess.PIPE)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/subprocess.py", line 1024, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/usr/lib/python3.11/subprocess.py", line 1901, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'grep"don"'
+Traceback (most recent call last):
+  File "/home/donald/.SuperSploit/source/core/inputHandler.py", line 113, in check
+    if Input_fixes(dataList):
+       ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/donald/.SuperSploit/source/core/inputfixes.py", line 17, in __init__
+    self.pipe()
+  File "/home/donald/.SuperSploit/source/core/inputfixes.py", line 89, in pipe
+    proc2 = subprocess.Popen(data[1].split(" "), stdin=subprocess.PIPE)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/subprocess.py", line 1024, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/usr/lib/python3.11/subprocess.py", line 1901, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'grep"don"'
+Traceback (most recent call last):
+  File "/home/donald/.SuperSploit/source/core/inputHandler.py", line 113, in check
+    if Input_fixes(dataList):
+       ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/donald/.SuperSploit/source/core/inputfixes.py", line 17, in __init__
+    self.pipe()
+  File "/home/donald/.SuperSploit/source/core/inputfixes.py", line 89, in pipe
+    proc2 = subprocess.Popen(data[1].split(" "), stdin=subprocess.PIPE)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/subprocess.py", line 1024, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/usr/lib/python3.11/subprocess.py", line 1901, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+PermissionError: [Errno 13] Permission denied: ''
+Traceback (most recent call last):
+  File "/home/donald/.SuperSploit/source/core/inputHandler.py", line 113, in check
+    if Input_fixes(dataList):
+       ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/donald/.SuperSploit/source/core/inputfixes.py", line 17, in __init__
+    self.pipe()
+  File "/home/donald/.SuperSploit/source/core/inputfixes.py", line 90, in pipe
+    proc2 = subprocess.Popen(data[1].split(" "), stdin=subprocess.PIPE)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/subprocess.py", line 1024, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/usr/lib/python3.11/subprocess.py", line 1901, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'grep"don"'
+Traceback (most recent call last):
+  File "/home/donald/.SuperSploit/source/core/inputHandler.py", line 113, in check
+    if Input_fixes(dataList):
+       ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/donald/.SuperSploit/source/core/inputfixes.py", line 17, in __init__
+    self.pipe()
+  File "/home/donald/.SuperSploit/source/core/inputfixes.py", line 90, in pipe
+    proc2 = subprocess.Popen(data[1].split(" "), stdin=subprocess.PIPE)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/subprocess.py", line 1024, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/usr/lib/python3.11/subprocess.py", line 1901, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+PermissionError: [Errno 13] Permission denied: ''
+Traceback (most recent call last):
+  File "/home/donald/.SuperSploit/source/core/inputHandler.py", line 113, in check
+    if Input_fixes(dataList):
+       ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/donald/.SuperSploit/source/core/inputfixes.py", line 17, in __init__
+    self.pipe()
+  File "/home/donald/.SuperSploit/source/core/inputfixes.py", line 91, in pipe
+    proc2 = subprocess.Popen(data[1].split(" "), stdin=subprocess.PIPE)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/subprocess.py", line 1024, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/usr/lib/python3.11/subprocess.py", line 1901, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'grep"don"'
+Traceback (most recent call last):
+  File "/home/donald/.SuperSploit/source/core/inputHandler.py", line 113, in check
+    if Input_fixes(dataList):
+       ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/donald/.SuperSploit/source/core/inputfixes.py", line 17, in __init__
+    self.pipe()
+  File "/home/donald/.SuperSploit/source/core/inputfixes.py", line 91, in pipe
+    proc2 = subprocess.Popen(data[1].split(" "), stdin=subprocess.PIPE)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/subprocess.py", line 1024, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/usr/lib/python3.11/subprocess.py", line 1901, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'grep"don"'
+Traceback (most recent call last):
+  File "/home/donald/.SuperSploit/source/core/inputHandler.py", line 113, in check
+    if Input_fixes(dataList):
+       ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/donald/.SuperSploit/source/core/inputfixes.py", line 17, in __init__
+    self.pipe()
+  File "/home/donald/.SuperSploit/source/core/inputfixes.py", line 93, in pipe
+    proc2 = subprocess.Popen(data[1].split(" "), stdin=subprocess.PIPE)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/subprocess.py", line 1024, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/usr/lib/python3.11/subprocess.py", line 1901, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+PermissionError: [Errno 13] Permission denied: ''
+Traceback (most recent call last):
+  File "/home/donald/.SuperSploit/source/core/inputHandler.py", line 113, in check
+    if Input_fixes.pipe(data):
+       ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/donald/.SuperSploit/source/core/inputfixes.py", line 87, in pipe
+    proc1 = subprocess.run(data[0].split(" "), capture_output=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/subprocess.py", line 548, in run
+    with Popen(*popenargs, **kwargs) as process:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/subprocess.py", line 1024, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/usr/lib/python3.11/subprocess.py", line 1901, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'i'
+Traceback (most recent call last):
+  File "/home/donald/.SuperSploit/source/core/inputHandler.py", line 113, in check
+    if Input_fixes.pipe(data):
+       ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/donald/.SuperSploit/source/core/inputfixes.py", line 88, in pipe
+    proc2 = subprocess.Popen(data[1].split(" "), stdin=subprocess.PIPE)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/subprocess.py", line 1024, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/usr/lib/python3.11/subprocess.py", line 1901, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+PermissionError: [Errno 13] Permission denied: ''
+Traceback (most recent call last):
+  File "/home/donald/.SuperSploit/source/core/inputHandler.py", line 113, in check
+    if Input_fixes.pipe(data):
+       ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/donald/.SuperSploit/source/core/inputfixes.py", line 88, in pipe
+    proc2 = subprocess.Popen(data[1].split(" "), stdin=subprocess.PIPE)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/subprocess.py", line 1024, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/usr/lib/python3.11/subprocess.py", line 1901, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+PermissionError: [Errno 13] Permission denied: ''
+Traceback (most recent call last):
+  File "/home/donald/.SuperSploit/source/core/inputHandler.py", line 113, in check
+    if Input_fixes.pipe(data):
+       ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/donald/.SuperSploit/source/core/inputfixes.py", line 87, in pipe
+    input(data0, data1)
+TypeError: input expected at most 1 argument, got 2
+Traceback (most recent call last):
+  File "/home/donald/.SuperSploit/source/core/inputHandler.py", line 113, in check
+    if Input_fixes.pipe(data):
+       ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/donald/.SuperSploit/source/core/inputfixes.py", line 89, in pipe
+    proc2 = subprocess.Popen(data1, stdin=subprocess.PIPE)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/subprocess.py", line 1024, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/usr/lib/python3.11/subprocess.py", line 1901, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'grep "don"'
+Traceback (most recent call last):
+  File "/home/donald/.SuperSploit/source/core/inputHandler.py", line 113, in check
+    if Input_fixes(dataList):
+       ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/donald/.SuperSploit/source/core/inputfixes.py", line 13, in __init__
+    ListOfFixes = [self.cd, self.clear, self.exit, self.cat, self.out, self.pipe]
+                                                                       ^^^^^^^^^
+AttributeError: 'Input_fixes' object has no attribute 'pipe'
+Traceback (most recent call last):
+  File "/home/donald/.SuperSploit/source/core/inputHandler.py", line 113, in check
+    if Input_fixes(dataList):
+       ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/donald/.SuperSploit/source/core/inputfixes.py", line 13, in __init__
+    ListOfFixes = [self.cd, self.clear, self.exit, self.cat, self.out, self.pipe]
+                                                                       ^^^^^^^^^
+AttributeError: 'Input_fixes' object has no attribute 'pipe'
+Traceback (most recent call last):
+  File "/home/donald/.SuperSploit/source/core/inputHandler.py", line 113, in check
+    if Input_fixes(dataList):
+       ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/donald/.SuperSploit/source/core/inputfixes.py", line 13, in __init__
+    ListOfFixes = [self.cd, self.clear, self.exit, self.cat, self.out, self.pipe]
+                                                                       ^^^^^^^^^
+AttributeError: 'Input_fixes' object has no attribute 'pipe'
+[!] Program not found: /bin/bash
+Traceback (most recent call last):
+  File "/home/donald/.SuperSploit/exploits/android_tools/adb Interface.py", line 249, in sys_call_Linux
+    subprocess.run(dataList)
+  File "/usr/lib/python3.11/subprocess.py", line 548, in run
+    with Popen(*popenargs, **kwargs) as process:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/subprocess.py", line 1024, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/usr/lib/python3.11/subprocess.py", line 1901, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'unistall'

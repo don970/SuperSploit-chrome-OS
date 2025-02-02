@@ -10,6 +10,7 @@ class bt:
         self.input = None
         self.out = None
         self.menu()
+
     def resetFlags(self):
         self.out = None
         self.input = None
@@ -52,7 +53,6 @@ class bt:
             self.resetFlags()
             return
         self.all = False
-        self.resetFlags()
         return
 
     def Dinfo(self):
