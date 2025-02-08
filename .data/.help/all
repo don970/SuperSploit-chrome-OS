@@ -9,12 +9,10 @@ commands:
                 all - Shows this page.
                 add - Adds a variable to the database
                 exploit - Runs the exploit
-                recon - Starts the recon/Osnit menu
                 set - Set a value.
                 show - Shows value or values supplied to it.
                 search - Search for exploits, payloads and targets
                 use - Set the EXPLOIT or PAYLOAD value
-                wifi - Starts the wifi osnit menu
                 bt - Start the Bluetooth osnit menu
                 phoneinfoga - starts phoneinfoga wrapper
                 recon-ng - Starts recon-ng v5.1.2, by Tim Tomes (@lanmaster53)
