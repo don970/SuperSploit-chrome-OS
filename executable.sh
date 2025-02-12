@@ -23,4 +23,4 @@ echo "Cleaning up"
 sudo rm supersploit.desktop supersploit.c
 cd $HOME/.SuperSploit
 
-python3 setup.py
+sudo python3 setup.py
