@@ -17,7 +17,8 @@ commands:
                 phoneinfoga - starts phoneinfoga wrapper
                 recon-ng - Starts recon-ng v5.1.2, by Tim Tomes (@lanmaster53)
                 bettercap - starts bettercap
-                name-search - gives a list of google dorks with that name
+                name-search - Gives a list of google dorks with that name
+                clean - Does a full clean. Clearing history, error log along with all scan and target data also clears passwd list
 
      Command Line Info
                 this imitates a command line interface by running the inputs as a command

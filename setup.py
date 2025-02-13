@@ -57,7 +57,7 @@ class SuperSploit:
 
   def install_dependencys(self):
     apt_deps = ["bettercap", "wireshark", "python3-pyfiglet", "netcat-traditional", "adb", "fastboot", "pip"]
-    pip_deps = ["pure-python-adb", "pwn"]
+    pip_deps = ["pure-python-adb", "pwn", "impacket"]
   
     # install the apt dependencys
     for x in apt_deps:

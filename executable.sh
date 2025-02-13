@@ -10,7 +10,7 @@ echo "Moving  supersploit to /bin folder"
 sudo mv supersploit /bin/supersploit && rm supersploit.c
 
 echo "Making desktop file and app drawer icon"
-printf "[Desktop Entry]\nName=supersploit\nComment=Exploit Management framework\nExec=/bin/supersploit\nIcon=/usr/share/icons/locolor/32x32/apps/logo1.png\nTerminal=true\nType=Application\nCategories=Utility" > supersploit.desktop
+printf "[Desktop Entry]\nName=supersploit\nComment=Exploit Management framework\nExec=/bin/supersploit\nIcon=/usr/share/icons/locolor/16x16/apps/logo1.png\nTerminal=true\nType=Application\nCategories=Utility" > supersploit.desktop
 sudo cp supersploit.desktop /usr/share/applications/
 
 echo "Moving icon"

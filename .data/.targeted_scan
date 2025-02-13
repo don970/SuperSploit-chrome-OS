@@ -1,39 +1,27 @@
-Starting Nmap 7.93 ( https://nmap.org ) at 2025-02-01 13:25 PST
-Nmap scan report for 192.168.0.1
-Host is up (0.0064s latency).
-Not shown: 989 closed tcp ports (conn-refused)
-PORT      STATE    SERVICE      VERSION
-22/tcp    filtered ssh
-23/tcp    filtered telnet
-53/tcp    open     domain       (unknown banner: Akamai Vantio CacheServe 7.7.2.1)
-| dns-nsid: 
-|   NSID: nwstnsrrpc06 (6e7773746e73727270633036)
-|   id.server: nwstnsrrpc06
-|_  bind.version: Akamai Vantio CacheServe 7.7.2.1
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2025-02-13 01:33 PST
+Nmap scan report for 192.168.0.114
+Host is up (0.012s latency).
+Not shown: 998 closed tcp ports (conn-refused)
+PORT     STATE SERVICE VERSION
+7000/tcp open  rtsp    AirTunes rtspd 377.40.00
+|_irc-info: Unable to open connection
+|_rtsp-methods: ERROR: Script execution failed (use -d to debug)
+9080/tcp open  glrpc?
 | fingerprint-strings: 
-|   DNSVersionBindReqTCP: 
-|     version
-|     bind
-|_    Akamai Vantio CacheServe 7.7.2.1
-80/tcp    open     http         lighttpd
-|_http-title: Did not follow redirect to https://192.168.0.1/
-111/tcp   filtered rpcbind
-443/tcp   open     ssl/http     lighttpd
-|_http-title: Common UI
-| ssl-cert: Subject: commonName=technicolor.net/organizationName=Technicolor/stateOrProvinceName=Brittany/countryName=FR
-| Not valid before: 2018-01-22T12:00:03
-|_Not valid after:  2028-01-20T12:00:03
-1026/tcp  filtered LSA-or-nterm
-1027/tcp  filtered IIS
-1028/tcp  filtered unknown
-1029/tcp  filtered ms-lsa
-49152/tcp open     upnp         Portable SDK for UPnP devices 1.6.22 (UPnP 1.0)
+|   FourOhFourRequest: 
+|     HTTP/1.0 200 OK
+|     Date: Thu, 13 Feb 2025 01:34:55 PST
+|     Server: NRDP/2022.2.2.0-0760926eac
+|     Connection: close
+|     Cache-Control: no-cache
+|     Content-Length: 9
+|_    status=ok
 1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
-SF-Port53-TCP:V=7.93%I=7%D=2/1%Time=679E9150%P=x86_64-pc-linux-gnu%r(DNSVe
-SF:rsionBindReqTCP,4D,"\0K\0\x06\x81\x80\0\x01\0\x01\0\0\0\0\x07version\x0
-SF:4bind\0\0\x10\0\x03\xc0\x0c\0\x10\0\x03\0\0\0\0\0!\x20Akamai\x20Vantio\
-SF:x20CacheServe\x207\.7\.2\.1");
-Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+SF-Port9080-TCP:V=7.94SVN%I=7%D=2/13%Time=67ADBCBF%P=x86_64-pc-linux-gnu%r
+SF:(FourOhFourRequest,A4,"HTTP/1\.0\x20200\x20OK\r\nDate:\x20Thu,\x2013\x2
+SF:0Feb\x202025\x2001:34:55\x20PST\r\nServer:\x20NRDP/2022\.2\.2\.0-076092
+SF:6eac\r\nConnection:\x20close\r\nCache-Control:\x20no-cache\r\nContent-L
+SF:ength:\x209\r\n\r\nstatus=ok");
 
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-Nmap done: 1 IP address (1 host up) scanned in 27.39 seconds
+Nmap done: 1 IP address (1 host up) scanned in 140.12 seconds

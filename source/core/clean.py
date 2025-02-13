@@ -28,4 +28,7 @@ class clean:
         with open(".data/.targets", "w") as file:
             file.write(" ")
             file.close()
+        with open(".data/.passwords", "w") as file:
+            file.write(" ")
+            file.close()
         return

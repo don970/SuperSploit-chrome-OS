@@ -2,7 +2,7 @@
     "CVE": null,
     "DURATION": "5",
     "EXE": "sudo",
-    "EXPLOIT": "/home/donald/.SuperSploit/exploits/android_tools/adb Interface.py",
+    "EXPLOIT": "/home/donald/.SuperSploit/exploits/android_tools/android root.py",
     "L_HOST": "0.0.0.0",
     "L_PORT": "9999",
     "PAYLOAD": "none",

@@ -1,5 +1,7 @@
 from prompt_toolkit import PromptSession
 import os
+import urllib.parse
+
 installation = f'{os.getenv("HOME")}/.SuperSploit'
 from prompt_toolkit.history import FileHistory
 from prompt_toolkit.auto_suggest import AutoSuggestFromHistory
@@ -28,7 +30,18 @@ class NameSearch:
         list1 = [""]
         print("Using site dictionary to perform a search return")
         for site in sdb:
-            searchPhrase = f"https://www.google.com/search?q=site%3A%22{site}%22+%7C+intext%3A%22{name}%22"
+            if len(name.split(" ")) > 1:
+                s = ""
+                n = name.split(" ")
+                for x in n:
+                    if n.index(x) < len(n) - 1:
+                        s += f"{x}%20"
+                    else:
+                        s += x
+                name = s
+                searchPhrase = f"https://www.google.com/search?q=site%3A%22{site}%22+%7C+intext%3A%22{name}%22"
+            else:
+                searchPhrase = f"https://www.google.com/search?q=site%3A%22{site}%22+%7C+intext%3A%22{name}%22"
             list1.append(searchPhrase)
         try:
             for x in list1:
@@ -54,6 +67,8 @@ dork - Returns a list of google dork links for the
         while True:
             try:
                 data = input("[ONST]: ")
+                if data == "exit":
+                    return
                 for x in funs:
                     funs[inputs.index(data)]()
                 continue
